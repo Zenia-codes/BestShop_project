@@ -4,9 +4,11 @@
 @import "../mixins";
 
 .header {
+  position: sticky;
+  top: 0; // nezapomeň!!! jinak sticky nefunguje
   height: 70px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  position: relative;
+  background-color: white;
   z-index: 10;
 
   .header_container {
@@ -23,10 +25,12 @@
   //Mobilní navigace (schovaná defaultně)
   .navigation_menu {
     position: absolute;
-    top: 80px; // výška headeru + 10px navíc pro zachování stínu
+    top: 70px;
     left: 0;
     right: 0;
-    background-color: white;
+
+    background-color: rgb(247, 247, 247);
+
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -35,8 +39,8 @@
     .ul_seznam {
       display: flex;
       flex-direction: column;
+      align-items: center;
       list-style: none;
-      padding: 20px;
       margin: 0;
       position: relative;
 
@@ -77,15 +81,15 @@
     }
 
     .navigation_menu {
-      position: static;
+      position: static; // zruší absolutní pozicování
       max-height: none;
       overflow: visible;
       box-shadow: none;
+      background-color: rgb(255, 255, 255);
 
       .ul_seznam {
         flex-direction: row;
         gap: 40px;
-        padding: 0;
       }
 
       li {

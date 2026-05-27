@@ -3,18 +3,13 @@
 @import "../mixins";
 
 .opening {
-  margin-top: 100px;
+  display: flex;
   flex-direction: column;
   text-align: center;
-
-  .opening-title {
-    margin-bottom: 30px;
-  }
+  padding-top: 25dvh;
 
   .opening-article {
-    margin-top: 20px;
-    margin-bottom: 65px;
-    padding: 0 70px;
+    padding: 25px 70px;
   }
 
   .image-bg {

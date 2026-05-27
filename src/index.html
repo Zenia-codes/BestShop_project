@@ -30,8 +30,8 @@
   <body>
     <!-- Header start -->
     <header class="header">
-      <div class="container header_container">
-        <a href="#" class="logo">BestShop</a>
+      <div class="header_container container">
+        <a href="#opening" class="logo">BestShop</a>
 
         <label for="menu_checkbox" class="menu_button">
           <input
@@ -44,10 +44,18 @@
 
         <nav class="navigation_menu">
           <ul class="ul_seznam">
-            <li><a href="#">Why us</a></li>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Prices</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="#opening" id="whyUsBtn" class="nav_list">Why us</a>
+            </li>
+            <li>
+              <a href="#benefits" id="benefitsBtn" class="nav_list">Benefits</a>
+            </li>
+            <li>
+              <a href="#prices" id="pricesBtn" class="nav_list">Prices</a>
+            </li>
+            <li>
+              <a href="#contact" id="contactBtn" class="nav_list">Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -56,13 +64,13 @@
 
     <!-- opening start -->
 
-    <section class="opening">
+    <section class="opening" id="opening">
       <div class="container">
         <h1 class="opening-title">Sell More!</h1>
         <p class="opening-article">
           Open shop on our platform and increase your sales
         </p>
-        <a href="button" class="btn">Open your shop</a>
+        <a href="#prices" class="btn">Open your shop</a>
       </div>
       <div class="image-bg"></div>
     </section>
@@ -104,7 +112,7 @@
 
     <!-- Benefits start -->
 
-    <section class="benefits">
+    <section class="benefits" id="benefits">
       <div class="benefits-container container">
         <div class="benefits-single benefits-reverse">
           <div class="benefits-text benefits-color1">
@@ -158,7 +166,7 @@
 
     <!-- Pricing start -->
 
-    <section class="container pricing">
+    <section class="container pricing" id="prices">
       <h2 class="pricing-title">Pricing</h2>
 
       <div class="pricing-boxes">
@@ -312,7 +320,7 @@
 
     <!-- Contacts start -->
 
-    <section class="contacts container">
+    <section class="contacts container" id="contact">
       <div class="container-contacts">
         <div class="left-side-contact">
           <h1>Any questions?</h1>
