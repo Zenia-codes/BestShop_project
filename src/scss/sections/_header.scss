@@ -30,11 +30,17 @@
     right: 0;
 
     background-color: rgb(247, 247, 247);
-
     max-height: 0;
     overflow: hidden;
+    pointer-events: none;
     transition: max-height 0.3s ease;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      max-height: 300px;
+    }
 
     .ul_seznam {
       display: flex;
@@ -67,14 +73,47 @@
     }
   }
 
-  //Otevření menu přes checkbox
-  &:has(.menu_button_checkbox:checked) {
-    .navigation_menu {
-      max-height: 250px; // místo pro zobrazení položek
-    }
+  // Hamburger button
+  .menu_button {
+    position: relative;
+    font-size: 23px;
+    color: $primaryBrand;
+    background-color: transparent;
+    padding: 20px;
+    border: 0;
+    cursor: pointer;
   }
 
-  //Desktop verze
+  .icon-open,
+  .icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+  }
+
+  .icon-open {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .icon-close {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  .menu_button[aria-expanded="true"] .icon-open {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .menu_button[aria-expanded="true"] .icon-close {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
   @media (min-width: $mobileBreakPoint) {
     .menu_button {
       display: none;
@@ -84,40 +123,23 @@
       position: static; // zruší absolutní pozicování
       max-height: none;
       overflow: visible;
+      pointer-events: auto;
       box-shadow: none;
       background-color: rgb(255, 255, 255);
 
       .ul_seznam {
         flex-direction: row;
         gap: 40px;
-      }
 
-      li {
+        li a {
+          font-size: 13px;
+        }
         a:hover {
           color: $colorFontHover;
           font-weight: 700;
           border-bottom: none !important;
         }
       }
-    }
-  }
-
-  // Hamburger button
-  .menu_button {
-    font-size: 22px;
-    color: $primaryBrand;
-    margin-left: 20px;
-    padding: 8px;
-    background-color: transparent;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgb(240, 240, 240);
-      border-radius: 8px;
-    }
-
-    .menu_button_checkbox {
-      display: none;
     }
   }
 }

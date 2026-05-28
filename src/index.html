@@ -33,16 +33,17 @@
       <div class="header_container container">
         <a href="#opening" class="logo">BestShop</a>
 
-        <label for="menu_checkbox" class="menu_button">
-          <input
-            id="menu_checkbox"
-            type="checkbox"
-            class="menu_button_checkbox"
-          />
-          <i class="fa-solid fa-bars"></i>
-        </label>
+        <button
+          class="menu_button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile_menu"
+        >
+          <i class="fa-solid fa-bars icon-open" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark icon-close" aria-hidden="true"></i>
+        </button>
 
-        <nav class="navigation_menu">
+        <nav class="navigation_menu" id="mobile_menu">
           <ul class="ul_seznam">
             <li>
               <a href="#opening" id="whyUsBtn" class="nav_list">Why us</a>
@@ -390,5 +391,6 @@
       </div>
     </section>
     <script src="./js/app.js" type="module"></script>
+    <script src="./scss/sections/header.js" type="module"></script>
   </body>
 </html>
