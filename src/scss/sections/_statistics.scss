@@ -2,10 +2,6 @@
 @import "../variables/colors";
 @import "../variables/fonts";
 
-.statistics {
-  scroll-margin-top: calc(100px + 70px); // 70px header
-}
-
 .number-style {
   font-family: $secondFont;
   font-size: 20px;
@@ -49,7 +45,6 @@ img[src*="Person"] {
 }
 
 .title2 {
-  padding: 0 25px;
   line-height: 40px;
   text-align: center;
 }

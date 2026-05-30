@@ -31,14 +31,14 @@
     display: grid;
     align-items: center;
 
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr);
 
     .image-bg {
       background: url(./assets/background/background_higher-profits.png)
         no-repeat center/cover;
       grid-column: 1 / 2;
       aspect-ratio: 16/9;
-      // margin-left: 100px;
+      margin: 0;
     }
 
     .btn {
