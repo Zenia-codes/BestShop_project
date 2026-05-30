@@ -1,6 +1,5 @@
 .calc {
-  padding: 30px 15px;
-  margin-top: 40px;
+  padding: 50px 0;
   background-color: $colorLightGrey;
 
   h2 {
@@ -10,21 +9,17 @@
   &__columns {
     max-width: 865px;
     margin: 50px auto 0;
-    display: block;
-
-    @media (min-width: $mobileBreakPoint) {
-      display: flex;
-    }
+    display: grid;
   }
 
   &__form {
     width: 100%;
     margin-right: 0;
 
-    @media (min-width: $mobileBreakPoint) {
-      width: 50%;
-      margin-right: 20px;
-    }
+    // @media (min-width: $mobileBreakPoint) {
+    //   width: 50%;
+    //   margin-right: 20px;
+    // }
   }
 
   &__input input,
@@ -123,11 +118,11 @@
     display: flex;
     flex-direction: column;
 
-    @media (min-width: $mobileBreakPoint) {
-      width: 50%;
-      margin-left: 20px;
-      margin-top: 0;
-    }
+    // @media (min-width: $mobileBreakPoint) {
+    //   width: 50%;
+    //   margin-left: 20px;
+    //   margin-top: 0;
+    // }
 
     .summary__total,
     .list__item {
@@ -197,4 +192,19 @@
 .list__item.open .item__remove {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media (min-width: $mobileBreakPoint) {
+  .calc {
+    &__columns {
+      max-width: 865px;
+      margin: 50px auto 0;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    &__summary {
+      padding-left: 15px;
+      margin-top: 0;
+    }
+  }
 }

@@ -32,21 +32,38 @@ body {
   box-sizing: border-box;
 }
 
+#opening {
+  scroll-margin-top: calc(100px - 70px); // 70 px výška navigace //
+}
+
+.statistics,
+.benefits,
+.pricing,
+.calc,
+.contacts {
+  padding-inline: 20px;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  gap: 20px;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: 1024px;
-  padding-inline: 20px;
 }
 
 h1 {
   font-family: $mainFont;
-  font-size: 49px;
+  font-size: 45px;
 }
 
 h2 {
   font-family: $secondFont;
-  font-size: 36px;
+  font-size: 30px;
   padding-bottom: 35px;
 }
 

@@ -9,6 +9,8 @@
 
   .benefits-container {
     max-width: 800px;
+    display: grid;
+    gap: 30px;
   }
 
   .benefits-single {
@@ -19,7 +21,6 @@
     border: 1px solid #e8e9ed;
     border-radius: 5px;
     padding: 0 20px;
-    margin-bottom: 30px;
 
     .benefits-text {
       margin: 40px 10px 50px 10px;

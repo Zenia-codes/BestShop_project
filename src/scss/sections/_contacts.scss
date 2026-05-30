@@ -4,17 +4,16 @@
 @import "../mixins";
 
 .contacts {
-  padding: 80px 0;
+  // padding: 80px 0;
 
   .container-contacts {
     max-width: 800px;
     margin: 100px auto;
+    display: grid;
   }
 
   @media (min-width: $mobileBreakPoint) {
     .container-contacts {
-      display: flex;
-
       .left-side-contact {
         flex: 1;
       }
@@ -43,7 +42,6 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
 
   .form-field {
     display: flex;
@@ -52,7 +50,7 @@
     font-family: $mainFont;
     font-size: 11px;
     letter-spacing: 3.28px;
-    color: #08a6e4;
+    color: $primaryBrand;
     font-weight: 700;
   }
 

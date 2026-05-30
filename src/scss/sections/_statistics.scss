@@ -2,6 +2,10 @@
 @import "../variables/colors";
 @import "../variables/fonts";
 
+.statistics {
+  scroll-margin-top: calc(100px + 70px); // 70px header
+}
+
 .number-style {
   font-family: $secondFont;
   font-size: 20px;
@@ -51,12 +55,12 @@ img[src*="Person"] {
 }
 
 .stat-boxes-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+
+  margin-top: 30px;
   margin-bottom: 100px;
-  gap: 35px;
 
   .statistic-box {
     display: flex;

@@ -4,24 +4,18 @@
 @import "../mixins";
 
 .pricing-title {
-  margin: 70px 0 30px 0;
   text-align: center;
 }
 
 .pricing-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 40px;
   align-items: center;
-
-  @media (min-width: 1200px) {
-    gap: 20px;
-  }
+  justify-items: center;
+  padding-block: 50px;
 }
 
 .pricing-box {
-  width: 100%;
   max-width: 350px;
   display: flex;
   justify-content: center;
@@ -41,7 +35,7 @@
   }
 
   .btn--basic {
-    background-color: $colorRedButton;
+    background-color: $colorBlueButton;
   }
 
   .btn--professional {
@@ -54,15 +48,15 @@
 }
 
 .pricing-box--basic {
-  border: 1px solid nth($list: $boxColors, $n: 1);
+  border: 1px solid nth($list: $boxColors, $n: 3);
 }
 
 .pricing-box--professional {
-  border: 1px solid nth($list: $boxColors, $n: 3);
+  border: 1px solid nth($list: $boxColors, $n: 1);
   box-shadow: 5px 10px 27px #07ace629;
   max-width: 420px;
   min-height: 300px;
-  padding: 60px 20px 0;
+  padding: 50px 20px 0;
   margin-top: 0px;
 }
 
@@ -113,11 +107,11 @@
 }
 
 .price-color1 {
-  color: nth($list: $boxColors, $n: 1);
+  color: nth($list: $boxColors, $n: 3);
 }
 
 .price-color2 {
-  color: nth($list: $boxColors, $n: 3);
+  color: nth($list: $boxColors, $n: 1);
 }
 
 .price-color3 {
@@ -128,4 +122,12 @@
   font-family: $mainFont;
   font-size: 12px;
   font-weight: 700;
+}
+
+@media (min-width: $mobileBreakPoint) {
+  .pricing-boxes {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 20px;
+  }
 }
