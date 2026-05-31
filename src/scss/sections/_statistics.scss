@@ -51,30 +51,24 @@ img[src*="Person"] {
 .stat-boxes-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 25px;
 
   margin-top: 30px;
-  margin-bottom: 100px;
+  margin-block: 40px;
 
   .statistic-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
+    gap: 8px;
 
-    .statistic-text {
-      font-family: $secondFont;
-      color: $colorSmallFonts;
-    }
+    padding-bottom: 15px;
+    text-align: center;
   }
 }
 
 @media (min-width: $mobileBreakPoint) {
   .stat-boxes-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+    margin-block: 50px;
   }
 }
