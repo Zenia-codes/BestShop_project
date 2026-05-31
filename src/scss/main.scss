@@ -6,6 +6,7 @@
 
 @import "sections/header";
 @import "sections/opening";
+@import "sections/whyUs";
 @import "sections/statistics";
 @import "sections/benefits";
 @import "sections/pricing";
@@ -40,6 +41,7 @@ body {
   scroll-margin-top: 70px; /* výška headeru */
 }
 
+.whyUs,
 .statistics,
 .benefits,
 .pricing,
@@ -52,7 +54,7 @@ body {
 .layout {
   position: relative;
   display: grid;
-  gap: 20px;
+  // gap: 20px;
 }
 
 .container {
@@ -63,28 +65,46 @@ body {
 
 h1 {
   font-family: $mainFont;
-  font-size: 45px;
+  font-size: 35px;
 }
 
 h2 {
-  font-family: $secondFont;
-  font-size: 30px;
-  padding-bottom: 35px;
+  font-family: $h3Font;
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 10px;
+  line-height: 1.2em;
+}
+
+h3 {
+  font-family: $h3Font;
+  font-weight: 600;
+  font-size: 16px;
+  // text-transform: uppercase;
 }
 
 span {
   font-family: $secondFont;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
   color: white;
 }
 
-p,
+strong {
+  font-weight: 700;
+}
+
 li {
   font-family: $secondFont;
 }
 
-p {
-  font-size: 16px;
+.article {
+  font-family: $secondFont;
+  color: $colorSmallFonts;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  max-width: 60ch;
+  hyphens: none;
 }

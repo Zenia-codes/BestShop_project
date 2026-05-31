@@ -10,6 +10,10 @@
   color: black;
 }
 
+.title2 {
+  text-align: center;
+}
+
 .circle {
   width: 63px;
   height: 63px;
@@ -44,11 +48,6 @@ img[src*="Person"] {
   top: 10%;
 }
 
-.title2 {
-  line-height: 40px;
-  text-align: center;
-}
-
 .stat-boxes-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -70,8 +69,10 @@ img[src*="Person"] {
       color: $colorSmallFonts;
     }
   }
+}
 
-  @media (min-width: $mobileBreakPoint) {
+@media (min-width: $mobileBreakPoint) {
+  .stat-boxes-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
