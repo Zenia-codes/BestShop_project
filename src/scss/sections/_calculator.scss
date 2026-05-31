@@ -1,6 +1,6 @@
 .calc {
   padding: 50px 0;
-  background-color: $colorLightGrey;
+  background-color: $LightGreyBackground;
 
   h2 {
     text-align: center;
@@ -83,7 +83,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: $colorLightGrey;
+          background-color: $LightGreyBackground;
           font-weight: 700;
         }
       }
@@ -112,12 +112,6 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-
-    // @media (min-width: $mobileBreakPoint) {
-    //   width: 50%;
-    //   margin-left: 20px;
-    //   margin-top: 0;
-    // }
 
     .summary__total,
     .list__item {

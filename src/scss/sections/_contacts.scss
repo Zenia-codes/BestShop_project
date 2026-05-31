@@ -105,7 +105,7 @@
 
 .button {
   @include button($paddingSendButton);
-  background-color: $colorMainButton;
+  background-color: $primaryBrand;
   border-radius: 35px;
   font-weight: 600;
   font-size: 13px;

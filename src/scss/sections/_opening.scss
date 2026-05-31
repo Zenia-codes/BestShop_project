@@ -17,7 +17,7 @@
   .btn {
     position: relative;
     @include button(0.9em 3em);
-    background-color: $colorMainButton;
+    background-color: $primaryBrand;
     text-transform: uppercase;
 
     justify-self: center;
