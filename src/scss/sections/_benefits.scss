@@ -9,133 +9,147 @@
   .benefits-container {
     max-width: 800px;
     display: grid;
-    gap: 30px;
+    gap: 10px;
     overflow: hidden;
+  }
+
+  .benefits-single,
+  .benefits-double {
+    background-color: white;
+    border: 1px solid $colorBorder;
+    border-radius: 7px;
   }
 
   .benefits-single {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    border: 1px solid #e8e9ed;
-    border-radius: 5px;
-
-    .benefits-text {
-      margin: 40px 10px 50px 10px;
-    }
-
-    @media (min-width: $mobileBreakPoint) {
-      display: flex;
-      flex-direction: row;
-
-      .benefits-color1::after {
-        content: "";
-        background-color: nth($boxColors, 1);
-        width: 80%;
-        height: 4px;
-        border-radius: 2px;
-        display: block;
-        margin-top: 50px;
-      }
-
-      .benefits-color2::after {
-        content: "";
-        background-color: nth($boxColors, 3);
-        width: 80%;
-        height: 4px;
-        border-radius: 2px;
-        display: block;
-        margin-top: 50px;
-      }
-
-      .benefits-color3::after {
-        content: "";
-        background-color: nth($boxColors, 2);
-        width: 80%;
-        height: 4px;
-        border-radius: 2px;
-        display: block;
-        margin-top: 50px;
-      }
-    }
   }
 
   .benefits-reverse {
-    flex-direction: column-reverse !important;
-
-    @media (min-width: $mobileBreakPoint) {
-      flex-direction: row !important;
-    }
+    flex-direction: column-reverse;
   }
 
-  .benefits-double {
+  .benefits-text {
+    padding: 0 30px 40px;
+  }
+
+  .benefits-text--padding {
+    padding: 30px 30px 40px;
+  }
+
+  // dekorativní spodní linka a její varianty
+  .benefits-color::after {
+    content: "";
+    width: 50%;
+    height: 4px;
+    border-radius: 2px;
+    display: block;
+    margin-top: 30px;
+  }
+
+  .benefits-single:nth-child(1) .benefits-color::after {
+    background-color: nth($boxColors, 1);
+  }
+
+  .benefits-single:nth-child(2) .benefits-color::after {
+    background-color: nth($boxColors, 3);
+  }
+
+  .benefits-wrapper .benefits-color::after {
+    background-color: nth($boxColors, 2);
+  }
+
+  .benefits-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .benefits-double {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .benefits-single--image {
       background-color: nth($list: $boxColors, $n: 2);
     }
-
-    @media (min-width: $mobileBreakPoint) {
-      display: flex;
-      gap: 30px;
-    }
   }
 }
 
-.benefits-image--notebook {
-  position: relative;
-  margin: 0 15px;
-
-  img {
-    width: 230px;
-    padding: 55px 0 10px 0;
-    position: relative;
-    z-index: 2;
-  }
-
-  &::before {
-    content: "";
-    width: 120px;
-    height: 120px;
-    display: block;
-    background-color: nth($list: $boxColors, $n: 1);
-    border-radius: 20px;
-    position: absolute;
-    right: -8px;
-    top: 30px;
-    transform: rotate(45deg);
-    z-index: 1;
-  }
+// obrázky v mobilní verzi
+.benefits-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
 }
 
-.benefits-image--phone {
-  position: relative;
-  margin: 0 15px;
-
-  img {
-    width: 250px;
-    padding: 50px 0 0 30px;
-    position: relative;
-    z-index: 2;
-  }
-
-  &::before {
-    content: "";
-    width: 170px;
-    height: 170px;
-    display: block;
-    background-color: nth($list: $boxColors, $n: 3);
-    border-radius: 50%;
-    position: absolute;
-    right: 50px;
-    top: 30px;
-    transform: rotate(45deg);
-    z-index: 1;
-  }
-}
-
+.benefits-image--notebook,
+.benefits-image--phone,
 .benefits-image--trumpet {
+  position: relative;
+  width: 260px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
-    width: 220px;
-    padding: 20px 0 0 0;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+}
+
+.benefits-image--notebook::before,
+.benefits-image--phone::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+}
+
+.benefits-image--notebook::before {
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  top: 24px;
+  right: 0px;
+  background-color: nth($list: $boxColors, $n: 1);
+  border-radius: 20px;
+  transform: rotate(45deg);
+}
+
+.benefits-image--phone::before {
+  z-index: 1;
+  width: 160px;
+  height: 160px;
+  top: 54px;
+  right: 39px;
+  background-color: nth($list: $boxColors, $n: 3);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+@media (min-width: $mobileBreakPoint) {
+  .benefits {
+    .benefits-text {
+      padding: 40px 30px;
+    }
+
+    .benefits-reverse {
+      flex-direction: row;
+    }
+
+    .benefits-single {
+      flex-direction: row;
+    }
+
+    .benefits-wrapper {
+      flex-direction: row;
+    }
   }
 }
