@@ -69,7 +69,6 @@ h1 {
 }
 
 h2 {
-  font-family: $mainFont;
   font-weight: 700;
   font-size: 21px;
   padding-bottom: 10px;
@@ -78,7 +77,6 @@ h2 {
 }
 
 h3 {
-  font-family: $mainFont;
   font-weight: 700;
   font-size: 17px;
   color: $colorFontHover;
@@ -95,12 +93,13 @@ strong {
   font-weight: 700;
 }
 
-li {
+p,
+li,
+a {
   font-family: $secondFont;
 }
 
 .article {
-  font-family: $secondFont;
   color: $colorSmallFonts;
   font-size: 13px;
   font-weight: 400;

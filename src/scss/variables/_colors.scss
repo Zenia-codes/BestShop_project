@@ -1,13 +1,14 @@
-$boxColors: oklch(0.807647 0.169852 75.7153), #55dfb4, #20c0ff;
+$boxColors: oklch(0.807647 0.169852 75.7153), oklch(0.7928 0.2489 168.96),
+  oklch(78.467% 0.13162 219.341);
 
-$colorGreenButton: #55dfb4;
-$colorBlueButton: #20c0ff;
+$colorGreenButton: oklch(84.652% 0.18702 161.498);
+$colorBlueButton: oklch(78.467% 0.13162 219.341);
 
-$colorSmallFonts: #959292;
-$colorFontHover: #213131;
+$colorSmallFonts: oklch(0.6625 0.0035 17.25);
+$colorFontHover: oklch(0.299 0.0211 196.07);
 $primaryBrand: oklch(0.807647 0.169852 75.7153);
 
-$LightGreyBackground: rgb(244, 244, 244);
+$LightGreyBackground: oklch(0.9672 0 0);
 
-$colorBorder: #e8e9ed;
-$boxShadow: #99999934;
+$colorBorder: oklch(0.9344 0.0055 274.96);
+$boxShadow: oklch(0.6829 0 0 / 20.4%);
