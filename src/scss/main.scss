@@ -54,7 +54,6 @@ body {
 .layout {
   position: relative;
   display: grid;
-  // gap: 20px;
 }
 
 .container {
@@ -63,44 +62,64 @@ body {
   max-width: 1024px;
 }
 
+h1,
+h2,
+h3 {
+  color: $colorFontHover;
+  font-weight: 700;
+}
+
+a,
+p,
+li,
+input,
+textarea,
+.article {
+  color: $colorSmallFonts;
+}
+
+strong {
+  font-weight: 700;
+  color: $colorSmallFonts;
+}
+
 h1 {
-  font-family: $mainFont;
   font-size: 35px;
 }
 
 h2 {
-  font-weight: 700;
   font-size: 21px;
   padding-bottom: 10px;
   line-height: 1.2em;
-  color: $colorFontHover;
 }
 
 h3 {
-  font-weight: 700;
   font-size: 17px;
-  color: $colorFontHover;
 }
 
 span {
-  font-family: $mainFont;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
 }
 
-strong {
-  font-weight: 700;
-}
-
+h1,
+h2,
+h3,
+h4,
 p,
 li,
-a {
-  font-family: $secondFont;
+a,
+strong,
+span,
+label,
+textarea,
+input,
+div {
+  font-family: $mainFont;
 }
 
 .article {
-  color: $colorSmallFonts;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5em;

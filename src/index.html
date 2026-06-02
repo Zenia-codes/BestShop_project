@@ -391,32 +391,61 @@
       <!-- Contacts start -->
 
       <section class="contacts container" id="contact">
+        <h2 class="title2">Let's Talk</h2>
+
         <div class="container-contacts">
           <div class="left-side-contact">
-            <h2 class="title2">Any questions?</h2>
-            <p class="content__text">Leave your email address or call us!</p>
+            <p class="content_text">
+              Whether you have a question about our platform, pricing, or
+              features, we're here to help. Get in touch and we'll respond as
+              soon as possible.
+            </p>
+
             <div class="contact-details">
-              <a href="mailto:info@bestshop.xyz" class="details__item">
-                <img src="./scss/assets/Mail Icon.svg" alt="mail" />
-                info@bestshop.xyz
+              <a href="mailto:info@bestshop.com" class="details__item">
+                <img src="./scss/assets/at-solid.png" alt="mail" />
+                info@bestshop.com
               </a>
-              <a href="mailto:info@bestshop.xyz" class="details__item">
-                <img src="./scss/assets/Phone Icon.svg" alt="phone" />
-                123 456 789
+
+              <a href="mailto:support@bestshop.com" class="details__item">
+                <img src="./scss/assets/at-solid.png" alt="mail" />
+                support@bestshop.com
+              </a>
+
+              <a href="tel:+420800123456" class="details__item">
+                <img src="./scss/assets/mobile-screen-solid.png" alt="phone" />
+                +420 800 123 456
+              </a>
+
+              <a href="tel:+420800123789" class="details__item">
+                <img src="./scss/assets/mobile-screen-solid.png" alt="phone" />
+                +420 800 123 789
               </a>
             </div>
           </div>
 
           <div class="right-side-contact">
             <form class="form-container">
-              <div class="name">
-                <label class="form-field">NAME</label>
-                <input type="text" class="text" />
-              </div>
+              <div class="wrapper_contact">
+                <div class="contact_form">
+                  <label class="form-field" for="name">NAME</label>
+                  <input type="text" id="name" class="text" />
+                </div>
 
-              <div class="mail">
-                <label class="form-field">EMAIL</label>
-                <input type="email" class="email" />
+                <div class="contact_form">
+                  <label class="form-field" for="email">EMAIL</label>
+                  <input type="email" id="email" class="email" />
+                </div>
+
+                <div class="contact_form">
+                  <label class="form-field" for="message">MESSAGE</label>
+                  <textarea
+                    id="message"
+                    class="message"
+                    rows="5"
+                    placeholder="write your text"
+                  ></textarea>
+                </div>
               </div>
 
               <div class="form-container">
@@ -424,19 +453,14 @@
                   <input type="checkbox" />
                   <span class="checkmark"></span>
                   <p class="form-text">
-                    I hereby give consent for my personal data included in my
-                    application to be processed for the purposes of the
-                    recruitment process under the European Parliament´s and
-                    Council of the European Union Regulation on the Protection
-                    of Natural Persons as of 27 April 2016, with regard to the
-                    processing of personal data and on the free movement of such
-                    data, and repealing Directive 95/46/EC (Data Protection
-                    Directive)
+                    I consent to the processing of my personal data for the
+                    purpose of responding to my inquiry and providing customer
+                    support.
                   </p>
                 </label>
               </div>
 
-              <button type="submit" class="btn button">Send</button>
+              <button type="submit" class="btn button">Send Message</button>
             </form>
           </div>
         </div>

@@ -31,14 +31,6 @@
     background-color: white;
   }
 
-  &__input {
-    input {
-      &::placeholder {
-        color: $colorSmallFonts;
-      }
-    }
-  }
-
   &__select {
     position: relative;
 
