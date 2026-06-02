@@ -39,7 +39,6 @@ body {
 
 * section {
   scroll-margin-top: 70px; /* výška headeru */
-  padding-block: 30px;
 }
 
 .whyUs,
@@ -49,6 +48,7 @@ body {
 .calc,
 .contacts {
   padding-inline: 20px;
+  padding-block: 30px;
 }
 
 .layout {
@@ -84,7 +84,7 @@ h3 {
 
 span {
   font-family: $mainFont;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
 }

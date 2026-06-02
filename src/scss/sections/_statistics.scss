@@ -60,7 +60,6 @@ img[src*="Person"] {
     align-items: center;
     gap: 8px;
 
-    padding-bottom: 15px;
     text-align: center;
   }
 }
@@ -68,6 +67,7 @@ img[src*="Person"] {
 @media (min-width: $mobileBreakPoint) {
   .stat-boxes-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: 0;
     margin-block: 50px;
   }
 }
