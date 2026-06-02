@@ -1,8 +1,12 @@
 $paddingPriceButton: 1em 4em;
 $paddingSendButton: 1.2em 7em;
 $paddingMainButton: 1.25em 8em;
+$paddingPriceButton: 0.7em 3em;
 
 @mixin button($padding) {
+  display: flex;
+  justify-content: center;
+
   color: #fff;
   text-decoration: none;
   padding: $padding;
@@ -14,8 +18,6 @@ $paddingMainButton: 1.25em 8em;
   min-width: 3em;
   max-width: 100%;
   white-space: nowrap;
-  display: flex;
-  justify-content: center;
 
   &:hover {
     transform: scale(0.95);

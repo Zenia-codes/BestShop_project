@@ -39,6 +39,7 @@ body {
 
 * section {
   scroll-margin-top: 70px; /* výška headeru */
+  padding-block: 30px;
 }
 
 .whyUs,
@@ -48,7 +49,6 @@ body {
 .calc,
 .contacts {
   padding-inline: 20px;
-  padding-block: 30px;
 }
 
 .layout {

@@ -7,34 +7,56 @@
   text-align: center;
 }
 
-.pricing-boxes {
+.pricing_boxes {
   display: grid;
-  gap: 40px;
   align-items: center;
   justify-items: center;
-  padding-block: 20px;
+  gap: 40px;
+
+  margin-block: 20px;
 }
 
 .pricing-box {
-  max-width: 350px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  // justify-content: space-between;
   align-items: center;
-  padding: 45px 10px 0;
+  overflow: visible;
+
   border-radius: 18px;
-  flex-wrap: wrap;
+
+  .pricing-content {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+    padding-top: 30px;
+  }
 
   .pricing-details {
-    padding: 0 20px;
-    font-family: $mainFont;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+
+    .pricing-items {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 7px;
+
+      .pricing-item {
+        font-size: 13px;
+        color: $colorSmallFonts;
+      }
+    }
   }
 
   .btn {
-    @include button($paddingPriceButton);
     position: relative;
-    bottom: -25px;
-    text-transform: uppercase;
+    @include button($paddingPriceButton);
+    font-size: 14px;
+    bottom: -16px;
   }
 
   .btn--basic {
@@ -50,26 +72,30 @@
   }
 }
 
+.pricing-box--basic,
+.pricing-box--premium {
+  min-height: 260px;
+  max-width: 280px;
+  width: 100%;
+}
+
 .pricing-box--basic {
   border: 1px solid nth($list: $boxColors, $n: 3);
+  box-shadow: 3px 4px 15px oklch(78.467% 0.13162 219.341 / 0.1);
 }
 
 .pricing-box--professional {
   border: 1px solid nth($list: $boxColors, $n: 1);
-  box-shadow: 5px 10px 27px #07ace629;
-  max-width: 420px;
-  min-height: 300px;
-  padding: 50px 20px 0;
-  margin-top: 0px;
+  box-shadow: 3px 4px 15px oklch(80.7647% 0.169852 75.7153 / 0.1);
+  min-height: 260px;
+  max-width: 310px;
+  width: 100%;
+  transform: scale(1.05);
 }
 
 .pricing-box--premium {
   border: 1px solid nth($list: $boxColors, $n: 2);
-}
-
-.pricing-item {
-  font-size: 14px;
-  color: $colorSmallFonts;
+  box-shadow: 3px 4px 15px oklch(84.652% 0.18702 161.498 / 0.1);
 }
 
 // fajfka a krizek
@@ -90,12 +116,10 @@
   font-family: $mainFont;
   font-weight: 700;
   font-size: 20px;
-  margin-bottom: 11px;
 }
 
 .price {
   font-size: 46px;
-  margin-bottom: 10px;
 }
 
 .price-color1 {
@@ -117,9 +141,12 @@
 }
 
 @media (min-width: $mobileBreakPoint) {
-  .pricing-boxes {
-    grid-template-columns: repeat(3, 1fr);
+  .pricing_boxes {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+  }
 
-    gap: 20px;
+  .pricing-box {
+    height: 100%;
   }
 }
