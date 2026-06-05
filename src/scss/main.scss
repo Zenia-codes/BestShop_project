@@ -10,9 +10,9 @@
 @import "sections/statistics";
 @import "sections/benefits";
 @import "sections/pricing";
+@import "sections/calculator";
 @import "sections/contacts";
 @import "sections/footer";
-@import "sections/calculator";
 
 // * {
 //   outline: 1px solid red;
@@ -67,12 +67,14 @@ h2,
 h3 {
   color: $colorFontHover;
   font-weight: 700;
+  text-align: center;
 }
 
 a,
 p,
 li,
 input,
+.select__input,
 textarea,
 .article {
   color: $colorSmallFonts;
@@ -125,6 +127,18 @@ div {
   line-height: 1.5em;
   max-width: 60ch;
   hyphens: none;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 12px 10px 0 10px;
+
+  .form-text {
+    font-size: 11px;
+    line-height: 1.5;
+  }
 }
 
 @media (min-width: $mobileBreakPoint) {

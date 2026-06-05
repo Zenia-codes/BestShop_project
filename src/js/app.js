@@ -9,88 +9,150 @@ function Calculator(prices, inputs, summary) {
   this.prices = prices;
   this.inputs = inputs;
   this.summary = summary;
-  this.total = 0;
+  this.state = {
+    products: 0,
+    orders: 0,
+    package: "",
+    accounting: false,
+    terminal: false,
+  };
+
   this.init();
 }
 
-// celková cena
+/* =========================
+   INIT
+========================= */
+Calculator.prototype.init = function () {
+  this.bindNumber("products");
+  this.bindNumber("orders");
+  this.bindPackage();
+  this.bindCheckbox("accounting");
+  this.bindCheckbox("terminal");
+  this.bindRemoveButtons();
+  this.calculateTotal();
+};
+
+/* =========================
+   UPDATE ROW (summary + preview)
+========================= */
+Calculator.prototype.setRow = function (
+  key,
+  active,
+  calcText = "",
+  priceText = ""
+) {
+  const item = this.summary.items[key];
+  const preview = document.querySelector(
+    `.calc__preview .item__type[data-id="${key}"]`
+  );
+
+  if (!item) return;
+
+  item.classList.toggle("open", active);
+
+  const calc = item.querySelector(".item__calc");
+  const price = item.querySelector(".item__price");
+
+  if (calc) calc.innerText = calcText;
+  if (price) price.innerText = priceText;
+
+  if (preview) {
+    preview.classList.toggle("active", active);
+  }
+};
+
+/* =========================
+   TOTAL
+========================= */
 Calculator.prototype.calculateTotal = function () {
   let total = 0;
-  const prices = this.prices;
-  const inputs = this.inputs;
 
-  // Produkty a objednávky
-  const productsVal = parseInt(inputs.products.value) || 0;
-  const ordersVal = parseInt(inputs.orders.value) || 0;
-  total += productsVal * prices.products;
-  total += ordersVal * prices.orders;
+  const s = this.state;
+  const p = this.prices;
 
-  // Balíček
-  const pack = inputs.package.dataset.value;
-  if (pack) total += prices.package[pack];
+  total += s.products * p.products;
+  total += s.orders * p.orders;
 
-  // Accounting / Terminal
-  if (inputs.accounting.checked) total += prices.accounting;
-  if (inputs.terminal.checked) total += prices.terminal;
+  if (s.package) total += p.package[s.package];
+
+  if (s.accounting) total += p.accounting;
+  if (s.terminal) total += p.terminal;
 
   this.total = total;
   this.updateTotal();
 };
 
-// Zobrazení celkové ceny
+/* =========================
+   TOTAL UI
+========================= */
 Calculator.prototype.updateTotal = function () {
-  const totalBox = this.summary.total;
-  totalBox.priceSpan.innerText = "$" + this.total.toFixed(2);
+  const box = this.summary.total;
 
-  this.total > 0
-    ? totalBox.container.classList.add("open")
-    : totalBox.container.classList.remove("open");
+  box.priceSpan.innerText = this.total.toFixed(2) + " $";
+  box.container.classList.toggle("open", this.total > 0);
 };
 
-// Obsluha číselných inputů
-Calculator.prototype.handleNumberInput = function (key) {
+/* =========================
+   NUMBER INPUTS
+========================= */
+Calculator.prototype.bindNumber = function (key) {
   const input = this.inputs[key];
-  const item = this.summary.items[key];
   const price = this.prices[key];
 
   input.addEventListener("input", () => {
-    const val = parseInt(input.value) || 0;
-    if (val > 0) {
-      item.classList.add("open");
-      item.querySelector(".item__calc").innerText = `${val} * $${price}`;
-      item.querySelector(".item__price").innerText =
-        "$" + (val * price).toFixed(2);
-    } else {
-      item.classList.remove("open");
+    let val = parseInt(input.value) || 0;
+
+    if (input.value.length > 12) {
+      input.value = input.value.slice(0, 12);
+      val = parseInt(input.value) || 0;
     }
+
+    this.state[key] = val;
+
+    if (val > 0) {
+      this.setRow(
+        key,
+        true,
+        `${val} × ${price}`,
+        (val * price).toFixed(2) + " $"
+      );
+    } else {
+      this.setRow(key, false);
+    }
+
     this.calculateTotal();
   });
 };
 
-// checkboxy
-Calculator.prototype.handleCheckbox = function (key) {
+/* =========================
+   CHECKBOXES
+========================= */
+Calculator.prototype.bindCheckbox = function (key) {
   const input = this.inputs[key];
-  const item = this.summary.items[key];
   const price = this.prices[key];
 
   input.addEventListener("change", () => {
+    this.state[key] = input.checked;
+
     if (input.checked) {
-      item.classList.add("open");
-      item.querySelector(".item__price").innerText = "$" + price;
+      this.setRow(key, true, "", price.toFixed(2) + " $");
     } else {
-      item.classList.remove("open");
-      item.querySelector(".item__price").innerText = "$0.00";
+      this.setRow(key, false);
     }
+
     this.calculateTotal();
   });
 };
 
-//package
-Calculator.prototype.handlePackage = function () {
+/* =========================
+   PACKAGE
+========================= */
+Calculator.prototype.bindPackage = function () {
   const wrapper = this.inputs.package;
   const header = wrapper.querySelector(".select__input");
   const options = wrapper.querySelectorAll(".select__dropdown li");
-  const item = this.summary.items.package;
+
   const prices = this.prices.package;
 
   header.addEventListener("click", () => {
@@ -102,37 +164,75 @@ Calculator.prototype.handlePackage = function () {
       const value = opt.dataset.value;
       const text = opt.innerText;
 
+      this.state.package = value;
+
       wrapper.dataset.value = value;
       header.innerText = text;
       wrapper.classList.remove("open");
 
-      item.classList.add("open");
-      item.querySelector(".item__calc").innerText = text;
-      item.querySelector(".item__price").innerText = "$" + prices[value];
+      this.setRow("package", true, text, prices[value].toFixed(2) + " $");
 
       this.calculateTotal();
     });
   });
 };
 
-Calculator.prototype.init = function () {
-  this.handleNumberInput("products");
-  this.handleNumberInput("orders");
-  this.handlePackage();
-  this.handleCheckbox("accounting");
-  this.handleCheckbox("terminal");
+/* =========================
+   REMOVE BUTTONS
+========================= */
+Calculator.prototype.bindRemoveButtons = function () {
+  Object.keys(this.summary.items).forEach((key) => {
+    const item = this.summary.items[key];
+    const btn = item.querySelector(".item__remove");
+
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      this.state[key] =
+        key === "products" || key === "orders"
+          ? 0
+          : key === "package"
+          ? ""
+          : false;
+
+      if (key === "products" || key === "orders") {
+        this.inputs[key].value = "";
+      }
+
+      if (key === "package") {
+        this.inputs.package.dataset.value = "";
+        this.inputs.package.querySelector(".select__input").innerText =
+          "Choose package";
+      }
+
+      if (key === "accounting" || key === "terminal") {
+        this.inputs[key].checked = false;
+      }
+
+      this.setRow(key, false);
+      this.calculateTotal();
+    });
+  });
 };
 
-//definice cen
+/* =========================
+   DATA
+========================= */
 const prices = {
   products: 0.5,
   orders: 0.25,
-  package: { basic: 0, professional: 25, premium: 60 },
+  package: {
+    basic: 0,
+    professional: 25,
+    premium: 60,
+  },
   accounting: 35,
   terminal: 5,
 };
 
-//definice inputů
+/* =========================
+   INPUTS
+========================= */
 const inputs = {
   products: document.getElementById("products"),
   orders: document.getElementById("orders"),
@@ -141,7 +241,9 @@ const inputs = {
   terminal: document.getElementById("terminal"),
 };
 
-//definice summary
+/* =========================
+   SUMMARY
+========================= */
 const summary = {
   items: {
     products: document.querySelector('.list__item[data-id="products"]'),
@@ -156,33 +258,7 @@ const summary = {
   },
 };
 
+/* =========================
+   START
+========================= */
 const calculator = new Calculator(prices, inputs, summary);
-
-// tlačítka pro smazání položky
-Object.values(summary.items).forEach((itemEl) => {
-  const btn = itemEl.querySelector(".item__remove");
-  if (!btn) return;
-
-  btn.addEventListener("click", () => {
-    itemEl.classList.remove("open");
-    const id = itemEl.dataset.id;
-
-    switch (id) {
-      case "products":
-      case "orders":
-        inputs[id].value = "";
-        break;
-      case "package":
-        inputs.package.dataset.value = "";
-        inputs.package.querySelector(".select__input").innerText =
-          "Choose package";
-        break;
-      case "accounting":
-      case "terminal":
-        inputs[id].checked = false;
-        break;
-    }
-
-    calculator.calculateTotal();
-  });
-});
