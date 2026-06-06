@@ -124,7 +124,7 @@
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 6px;
       align-items: center;
-      justify-content: space-between;
+      // justify-content: space-between;
       color: white;
       display: flex;
 
@@ -136,7 +136,6 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        justify-content: space-between;
 
         .item__calc {
           overflow-wrap: anywhere;
@@ -146,13 +145,13 @@
 
     .summary__total {
       align-self: flex-end;
-      // justify-content: flex-end;
       padding: 8px 40px;
       background-color: $primaryBrand;
 
       .total__price {
         font-size: 1.25rem;
         font-weight: 700;
+        padding-left: 10px;
       }
     }
 
@@ -168,6 +167,7 @@
 .list__item {
   position: relative;
   min-width: 0;
+  justify-content: space-between;
 }
 
 .list__item[data-id="products"] {
@@ -225,7 +225,7 @@
     &__contain {
       grid-template-columns: 220px 110px 1fr;
       align-items: start;
-      gap: 20px;
+      gap: 15px;
     }
 
     &__summary {
