@@ -37,7 +37,7 @@ body {
   box-sizing: border-box;
 }
 
-* section {
+section {
   scroll-margin-top: 70px; /* výška headeru */
 }
 
@@ -48,7 +48,7 @@ body {
 .calc,
 .contacts {
   padding-inline: 20px;
-  padding-block: 30px;
+  padding-block: 100px;
 }
 
 .layout {
@@ -134,7 +134,7 @@ div {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  padding: 12px 10px 0 10px;
+  padding: 5px 10px 0;
 
   .form-text {
     font-size: 11px;
@@ -145,5 +145,9 @@ div {
 @media (min-width: $mobileBreakPoint) {
   .article {
     font-size: 14px;
+  }
+
+  .form-checkbox {
+    padding: 12px 10px 0 10px;
   }
 }
