@@ -201,7 +201,7 @@ Calculator.prototype.bindRemoveButtons = function () {
         this.inputs[key].checked = false;
       }
 
-      this.setRow(key, false);
+      this.setRow(key, true, "", "0.00 $");
       this.calculateTotal();
     });
   });
