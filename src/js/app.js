@@ -20,9 +20,8 @@ function Calculator(prices, inputs, summary) {
   this.init();
 }
 
-/* =========================
-   INIT
-========================= */
+// INIT
+
 Calculator.prototype.init = function () {
   this.bindNumber("products");
   this.bindNumber("orders");
@@ -33,9 +32,8 @@ Calculator.prototype.init = function () {
   this.calculateTotal();
 };
 
-/* =========================
-   UPDATE ROW (summary + preview)
-========================= */
+// UPDATE ROW (summary + preview)
+
 Calculator.prototype.setRow = function (
   key,
   active,
@@ -62,9 +60,8 @@ Calculator.prototype.setRow = function (
   }
 };
 
-/* =========================
-   TOTAL
-========================= */
+//  TOTAL
+
 Calculator.prototype.calculateTotal = function () {
   let total = 0;
 
@@ -83,9 +80,8 @@ Calculator.prototype.calculateTotal = function () {
   this.updateTotal();
 };
 
-/* =========================
-   TOTAL UI
-========================= */
+// TOTAL UI
+
 Calculator.prototype.updateTotal = function () {
   const box = this.summary.total;
 
@@ -93,9 +89,8 @@ Calculator.prototype.updateTotal = function () {
   box.container.classList.toggle("open", this.total > 0);
 };
 
-/* =========================
-   NUMBER INPUTS
-========================= */
+// NUMBER INPUTS
+
 Calculator.prototype.bindNumber = function (key) {
   const input = this.inputs[key];
   const price = this.prices[key];
@@ -103,8 +98,8 @@ Calculator.prototype.bindNumber = function (key) {
   input.addEventListener("input", () => {
     let val = parseInt(input.value) || 0;
 
-    if (input.value.length > 12) {
-      input.value = input.value.slice(0, 12);
+    if (input.value.length > 10) {
+      input.value = input.value.slice(0, 10);
       val = parseInt(input.value) || 0;
     }
 
@@ -125,9 +120,8 @@ Calculator.prototype.bindNumber = function (key) {
   });
 };
 
-/* =========================
-   CHECKBOXES
-========================= */
+// CHECKBOXES
+
 Calculator.prototype.bindCheckbox = function (key) {
   const input = this.inputs[key];
   const price = this.prices[key];
@@ -145,9 +139,8 @@ Calculator.prototype.bindCheckbox = function (key) {
   });
 };
 
-/* =========================
-   PACKAGE
-========================= */
+// PACKAGE
+
 Calculator.prototype.bindPackage = function () {
   const wrapper = this.inputs.package;
   const header = wrapper.querySelector(".select__input");
@@ -177,9 +170,8 @@ Calculator.prototype.bindPackage = function () {
   });
 };
 
-/* =========================
-   REMOVE BUTTONS
-========================= */
+// REMOVE BUTTONS
+
 Calculator.prototype.bindRemoveButtons = function () {
   Object.keys(this.summary.items).forEach((key) => {
     const item = this.summary.items[key];
@@ -215,9 +207,8 @@ Calculator.prototype.bindRemoveButtons = function () {
   });
 };
 
-/* =========================
-   DATA
-========================= */
+// DATA
+
 const prices = {
   products: 0.5,
   orders: 0.25,
@@ -230,9 +221,8 @@ const prices = {
   terminal: 5,
 };
 
-/* =========================
-   INPUTS
-========================= */
+// INPUTS
+
 const inputs = {
   products: document.getElementById("products"),
   orders: document.getElementById("orders"),
@@ -241,9 +231,8 @@ const inputs = {
   terminal: document.getElementById("terminal"),
 };
 
-/* =========================
-   SUMMARY
-========================= */
+// SUMMARY
+
 const summary = {
   items: {
     products: document.querySelector('.list__item[data-id="products"]'),
@@ -258,7 +247,6 @@ const summary = {
   },
 };
 
-/* =========================
-   START
-========================= */
+// START
+
 const calculator = new Calculator(prices, inputs, summary);

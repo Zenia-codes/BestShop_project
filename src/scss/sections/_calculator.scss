@@ -4,7 +4,7 @@
 
   &__contain {
     width: 100%;
-    max-width: 670px;
+    max-width: 700px;
     margin-block: 30px;
     display: grid;
     margin-inline: auto;
@@ -35,7 +35,9 @@
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: $numberFont;
   }
 
   &__select {
@@ -124,7 +126,6 @@
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 6px;
       align-items: center;
-      // justify-content: space-between;
       color: white;
       display: flex;
 
@@ -132,38 +133,34 @@
         display: inline-block;
       }
 
-      &.open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        .item__calc {
-          overflow-wrap: anywhere;
-        }
-      }
-    }
-
-    .summary__total {
-      align-self: flex-end;
-      padding: 8px 40px;
-      background-color: $primaryBrand;
-
-      .total__price {
-        font-size: 1.25rem;
-        font-weight: 700;
-        padding-left: 10px;
-      }
-    }
-
-    .item {
-      &__price {
-        font-weight: 600;
+      .item__calc {
+        overflow-wrap: anywhere;
       }
     }
   }
-}
 
-// tlačítko pro smazání položky
+  .summary__total {
+    align-self: flex-end;
+    padding: 8px 40px;
+    background-color: $primaryBrand;
+
+    .total__price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding-left: 10px;
+      font-family: $numberFont;
+    }
+  }
+
+  .item {
+    &__price {
+      font-weight: 600;
+      font-family: $numberFont;
+    }
+  }
+}
+// }
+
 .list__item {
   position: relative;
   min-width: 0;
@@ -185,7 +182,7 @@
 .list__item[data-id="terminal"] {
   order: 4;
 }
-
+// tlačítko pro smazání položky
 .item__remove {
   position: absolute;
   right: 5px;
@@ -196,6 +193,7 @@
   border: 1px solid white;
   border-radius: 4px;
   padding: 3px 6px;
+  margin-right: 5px;
   cursor: pointer;
   font-size: 4px;
   opacity: 0;
@@ -206,6 +204,7 @@
 .list__item.open .item__remove {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .consent__text {
@@ -223,7 +222,7 @@
 @media (min-width: $mobileBreakPoint) {
   .calc {
     &__contain {
-      grid-template-columns: 220px 110px 1fr;
+      grid-template-columns: 230px 110px 1fr;
       align-items: start;
       gap: 15px;
     }
@@ -245,7 +244,7 @@
   .calc__preview {
     display: inline-flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 34px;
 
     font-weight: 600;
     margin-top: 9px;
