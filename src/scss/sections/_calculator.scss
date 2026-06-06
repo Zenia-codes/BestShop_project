@@ -4,7 +4,7 @@
 
   &__contain {
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     margin-block: 30px;
     display: grid;
     margin-inline: auto;
@@ -222,7 +222,7 @@
 @media (min-width: $mobileBreakPoint) {
   .calc {
     &__contain {
-      grid-template-columns: 230px 110px 1fr;
+      grid-template-columns: 240px 130px 1fr;
       align-items: start;
       gap: 15px;
     }
@@ -247,7 +247,7 @@
     gap: 34px;
 
     font-weight: 600;
-    margin-top: 9px;
+    margin: 9px 0 0 25px;
   }
 
   .item__type.active {
