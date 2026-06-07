@@ -1,7 +1,7 @@
-@import "../../scss/styles/variables/breakpoints";
-@import "../../scss/styles/variables/colors";
-@import "../../scss/styles/variables/fonts";
-@import "../../scss/styles/variables/mixins";
+@import "../styles/variables/breakpoints";
+@import "../styles/variables/colors";
+@import "../styles/variables/fonts";
+@import "../styles/variables/mixins";
 
 .container-contacts {
   display: grid;
@@ -98,7 +98,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .checkbox {
-  background-image: url("./assets/Checkmark-1.svg");
+  background-image: url("../assets/icons/Checkmark-1.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

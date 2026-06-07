@@ -1,18 +1,18 @@
-@import "./styles/variables/reset.css";
+@import "./variables/reset.css";
 
-@import "./styles/variables/breakpoints";
-@import "./styles/variables/fonts";
-@import "./styles/variables/colors";
+@import "./variables/breakpoints";
+@import "./variables/fonts";
+@import "./variables/colors";
 
-@import "./components/header/header";
-@import "./components/opening";
-@import "./components/whyUs";
-@import "./components/statistics";
-@import "./components/benefits";
-@import "./components/pricing";
-@import "./components/calculator/calculator";
-@import "./components/contacts";
-@import "./components/footer";
+@import "../components/header/header";
+@import "../components/opening";
+@import "../components/whyUs";
+@import "../components/statistics";
+@import "../components/benefits";
+@import "../components/pricing";
+@import "../components/calculator/calculator";
+@import "../components/contacts";
+@import "../components/footer";
 
 // * {
 //   outline: 1px solid red;

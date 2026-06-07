@@ -1,6 +1,6 @@
-@import "../../scss/styles/variables/colors";
-@import "../../scss/styles/variables/fonts";
-@import "../../scss/styles/variables/mixins";
+@import "../styles/variables/colors";
+@import "../styles/variables/fonts";
+@import "../styles/variables/mixins";
 
 .opening {
   min-height: 90dvh;
@@ -8,7 +8,7 @@
   .image-bg {
     position: relative;
     width: 100%;
-    background: url(./assets/background/background_higher-profits_mobil.png)
+    background: url(../assets/background/background_higher-profits_mobil.png)
       no-repeat center/cover;
     aspect-ratio: 4/3;
     margin: 55px 0 35px;
@@ -34,7 +34,7 @@
     grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr);
 
     .image-bg {
-      background: url(./assets/background/background_higher-profits.png)
+      background: url(../assets/background/background_higher-profits.png)
         no-repeat center/cover;
       grid-column: 1 / 2;
       aspect-ratio: 16/9;
