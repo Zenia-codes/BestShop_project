@@ -1,2 +1,2 @@
-import "./scss/sections/header/header";
-import "./scss/sections/calculator/calculator";
+import "./components/header/header";
+import "./components/calculator/calculator";
