@@ -48,7 +48,7 @@ section {
 .calc,
 .contacts {
   padding-inline: 20px;
-  padding-block: 100px;
+  padding-block: 50px;
 }
 
 .layout {
@@ -149,5 +149,14 @@ div {
 
   .form-checkbox {
     padding: 12px 10px 0 10px;
+  }
+
+  .whyUs,
+  .statistics,
+  .benefits,
+  .pricing,
+  .calc,
+  .contacts {
+    padding-block: 100px;
   }
 }
