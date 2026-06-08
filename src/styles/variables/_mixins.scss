@@ -1,7 +1,5 @@
-$paddingPriceButton: 1em 4em;
-$paddingSendButton: 1.2em 7em;
-$paddingMainButton: 1.25em 8em;
-$paddingPriceButton: 0.7em 3em;
+@use "./colors" as c;
+@use "./fonts" as f;
 
 @mixin button($padding) {
   display: flex;
@@ -10,7 +8,7 @@ $paddingPriceButton: 0.7em 3em;
   color: #fff;
   text-decoration: none;
   padding: $padding;
-  font-family: $mainFont;
+  font-family: f.$mainFont;
   border-radius: 40px;
   box-shadow: 0px 2px 3px 0px grey;
   transition: 0.2s;
@@ -26,9 +24,9 @@ $paddingPriceButton: 0.7em 3em;
 }
 
 @mixin logoStyle($fontSize: 32px) {
-  font-family: $mainFont;
+  font-family: f.$mainFont;
   font-size: $fontSize;
-  color: $primaryBrand;
+  color: c.$primaryBrand;
   text-decoration: none;
   font-weight: 500;
 

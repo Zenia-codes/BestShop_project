@@ -1,10 +1,10 @@
-@import "../styles/variables/breakpoints";
-@import "../styles/variables/colors";
-@import "../styles/variables/fonts";
+@use "sass:list";
+@use "../styles/variables/breakpoints" as b;
+@use "../styles/variables/colors" as c;
 
 .benefits {
   width: 100%;
-  background-color: $LightGreyBackground;
+  background-color: c.$LightGreyBackground;
 
   .benefits-container {
     max-width: 800px;
@@ -16,7 +16,7 @@
   .benefits-single,
   .benefits-double {
     background-color: white;
-    border: 1px solid $colorBorder;
+    border: 1px solid c.$colorBorder;
     border-radius: 7px;
   }
 
@@ -53,15 +53,15 @@
   }
 
   .benefits-single:nth-child(1) .benefits-color::after {
-    background-color: nth($boxColors, 1);
+    background-color: list.nth(c.$boxColors, 1);
   }
 
   .benefits-single:nth-child(2) .benefits-color::after {
-    background-color: nth($boxColors, 3);
+    background-color: list.nth(c.$boxColors, 3);
   }
 
   .benefits-wrapper .benefits-color::after {
-    background-color: nth($boxColors, 2);
+    background-color: list.nth(c.$boxColors, 2);
   }
 
   .benefits-wrapper {
@@ -76,7 +76,7 @@
     }
 
     .benefits-single--image {
-      background-color: nth($list: $boxColors, $n: 2);
+      background-color: list.nth($list: c.$boxColors, $n: 2);
     }
   }
 }
@@ -122,7 +122,7 @@
   height: 120px;
   top: 24px;
   right: 0px;
-  background-color: nth($list: $boxColors, $n: 1);
+  background-color: list.nth($list: c.$boxColors, $n: 1);
   border-radius: 20px;
   transform: rotate(45deg);
 }
@@ -133,12 +133,12 @@
   height: 160px;
   top: 54px;
   right: 39px;
-  background-color: nth($list: $boxColors, $n: 3);
+  background-color: list.nth($list: c.$boxColors, $n: 3);
   border-radius: 50%;
   transform: rotate(45deg);
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .benefits {
     .benefits-text {
       padding: 40px 30px;

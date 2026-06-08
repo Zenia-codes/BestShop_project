@@ -1,6 +1,6 @@
-@import "../styles/variables/breakpoints";
-@import "../styles/variables/colors";
-@import "../styles/variables/fonts";
+@use "sass:list";
+@use "../styles/variables/breakpoints" as b;
+@use "../styles/variables/colors" as c;
 
 .number-style {
   font-size: 20px;
@@ -24,13 +24,13 @@
   }
 
   &.circle-color1 {
-    background-color: nth($boxColors, 1);
+    background-color: list.nth(c.$boxColors, 1);
   }
   &.circle-color2 {
-    background-color: nth($boxColors, 3);
+    background-color: list.nth(c.$boxColors, 3);
   }
   &.circle-color3 {
-    background-color: nth($boxColors, 2);
+    background-color: list.nth(c.$boxColors, 2);
   }
 }
 
@@ -63,7 +63,7 @@ img[src*="Person"] {
   }
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .stat-boxes-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 0;

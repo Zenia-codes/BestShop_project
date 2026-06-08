@@ -1,6 +1,12 @@
+@use "../../styles/variables/colors" as c;
+@use "../../styles/variables/breakpoints" as b;
+@use "../../styles/variables/fonts" as f;
+@use "../../styles/variables/paddingButton" as p;
+@use "../../styles/variables/mixins" as m;
+
 .calc {
   padding: 50px 0;
-  background-color: $LightGreyBackground;
+  background-color: c.$LightGreyBackground;
 
   &__contain {
     width: 100%;
@@ -23,11 +29,11 @@
   &__select .select__input {
     width: 100%;
     border-radius: 6px;
-    border: 1px solid $primaryBrand;
+    border: 1px solid c.$primaryBrand;
     padding: 11px 15px;
     line-height: 1em;
     font-size: 0.8125rem;
-    box-shadow: 0px 3px 6px $boxShadow;
+    box-shadow: 0px 3px 6px c.$boxShadow;
     background-color: white;
   }
 
@@ -37,7 +43,7 @@
     min-width: 0;
     font-size: 15px;
     font-weight: 300;
-    font-family: $numberFont;
+    font-family: f.$numberFont;
   }
 
   &__select {
@@ -60,8 +66,8 @@
         width: 8px;
         height: 8px;
 
-        border-right: 2px solid $primaryBrand;
-        border-bottom: 2px solid $primaryBrand;
+        border-right: 2px solid c.$primaryBrand;
+        border-bottom: 2px solid c.$primaryBrand;
 
         transform: rotate(45deg);
         transition: transform 0.3s ease;
@@ -85,7 +91,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: $LightGreyBackground;
+          background-color: c.$LightGreyBackground;
           font-weight: 700;
         }
       }
@@ -122,7 +128,7 @@
     .list__item {
       min-height: 40px;
       padding: 8px 45px 8px 15px;
-      background-color: $colorGreenButton;
+      background-color: c.$colorGreenButton;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 6px;
       align-items: center;
@@ -142,20 +148,20 @@
   .summary__total {
     align-self: flex-end;
     padding: 8px 40px;
-    background-color: $primaryBrand;
+    background-color: c.$primaryBrand;
 
     .total__price {
       font-size: 1.25rem;
       font-weight: 700;
       padding-left: 10px;
-      font-family: $numberFont;
+      font-family: f.$numberFont;
     }
   }
 
   .item {
     &__price {
       font-weight: 600;
-      font-family: $numberFont;
+      font-family: f.$numberFont;
     }
   }
 }
@@ -219,7 +225,7 @@
   display: none;
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .calc {
     &__contain {
       grid-template-columns: 240px 130px 1fr;

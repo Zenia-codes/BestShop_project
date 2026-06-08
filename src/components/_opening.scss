@@ -1,6 +1,6 @@
-@import "../styles/variables/colors";
-@import "../styles/variables/fonts";
-@import "../styles/variables/mixins";
+@use "../styles/variables/colors" as c;
+@use "../styles/variables/mixins" as m;
+@use "../styles/variables/breakpoints" as b;
 
 .opening {
   min-height: 90dvh;
@@ -16,15 +16,15 @@
 
   .btn {
     position: relative;
-    @include button(0.9em 3em);
-    background-color: $primaryBrand;
+    @include m.button(0.9em 3em);
+    background-color: c.$primaryBrand;
     text-transform: uppercase;
 
     justify-self: center;
   }
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .opening {
     position: relative;
 

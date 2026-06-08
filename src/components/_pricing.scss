@@ -1,7 +1,9 @@
-@import "../styles/variables/breakpoints";
-@import "../styles/variables/colors";
-@import "../styles/variables/fonts";
-@import "../styles/variables/mixins";
+@use "sass:list";
+@use "../styles/variables/breakpoints" as b;
+@use "../styles/variables/colors" as c;
+@use "../styles/variables/fonts" as f;
+@use "../styles/variables/mixins" as m;
+@use "../styles/variables/paddingButton" as p;
 
 .pricing-title {
   text-align: center;
@@ -51,21 +53,21 @@
 
   .btn {
     position: relative;
-    @include button($paddingPriceButton);
+    @include m.button(p.$paddingPriceButton);
     font-size: 14px;
     bottom: -16px;
   }
 
   .btn--basic {
-    background-color: $colorBlueButton;
+    background-color: c.$colorBlueButton;
   }
 
   .btn--professional {
-    background-color: $primaryBrand;
+    background-color: c.$primaryBrand;
   }
 
   .btn--premium {
-    background-color: $colorGreenButton;
+    background-color: c.$colorGreenButton;
   }
 }
 
@@ -77,12 +79,12 @@
 }
 
 .pricing-box--basic {
-  border: 1px solid nth($list: $boxColors, $n: 3);
+  border: 1px solid list.nth($list: c.$boxColors, $n: 3);
   box-shadow: 3px 4px 15px oklch(78.467% 0.13162 219.341 / 0.1);
 }
 
 .pricing-box--professional {
-  border: 1px solid nth($list: $boxColors, $n: 1);
+  border: 1px solid list.nth($list: c.$boxColors, $n: 1);
   box-shadow: 3px 4px 15px oklch(80.7647% 0.169852 75.7153 / 0.1);
   min-height: 260px;
   max-width: 300px;
@@ -91,7 +93,7 @@
 }
 
 .pricing-box--premium {
-  border: 1px solid nth($list: $boxColors, $n: 2);
+  border: 1px solid list.nth($list: c.$boxColors, $n: 2);
   box-shadow: 3px 4px 15px oklch(84.652% 0.18702 161.498 / 0.1);
 }
 
@@ -116,19 +118,19 @@
 
 .price {
   font-size: 46px;
-  font-family: $numberFont;
+  font-family: f.$numberFont;
 }
 
 .price-color1 {
-  color: nth($list: $boxColors, $n: 3);
+  color: list.nth($list: c.$boxColors, $n: 3);
 }
 
 .price-color2 {
-  color: nth($list: $boxColors, $n: 1);
+  color: list.nth($list: c.$boxColors, $n: 1);
 }
 
 .price-color3 {
-  color: nth($list: $boxColors, $n: 2);
+  color: list.nth($list: c.$boxColors, $n: 2);
 }
 
 .pricing-limited {
@@ -136,7 +138,7 @@
   font-weight: 600;
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .pricing_boxes {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: stretch;

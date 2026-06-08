@@ -1,7 +1,7 @@
-@import "../styles/variables/breakpoints";
-@import "../styles/variables/colors";
-@import "../styles/variables/fonts";
-@import "../styles/variables/mixins";
+@use "../styles/variables/breakpoints" as b;
+@use "../styles/variables/colors" as c;
+@use "../styles/variables/mixins" as m;
+@use "../styles/variables/paddingButton" as p;
 
 .container-contacts {
   display: grid;
@@ -60,14 +60,14 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: $primaryBrand;
+  color: c.$primaryBrand;
 }
 
 .text,
 .email {
   width: 100%;
   border: none;
-  border-bottom: 1px solid $colorSmallFonts;
+  border-bottom: 1px solid c.$colorSmallFonts;
   padding: 8px 0;
   font-size: 16px;
   letter-spacing: 1px;
@@ -80,7 +80,7 @@
   margin-top: 15px;
   letter-spacing: 0.5px;
 
-  border: 1px solid $colorSmallFonts;
+  border: 1px solid c.$colorSmallFonts;
   border-radius: 5px;
 
   resize: vertical;
@@ -110,21 +110,21 @@ input[type="checkbox"]:checked + .checkbox {
   width: 20px;
   height: 20px;
 
-  border: 1px solid $colorSmallFonts;
+  border: 1px solid c.$colorSmallFonts;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    border-color: $colorFontHover;
+    border-color: c.$colorFontHover;
   }
 }
 
 .button {
   align-self: center;
 
-  @include button($paddingPriceButton);
+  @include m.button(p.$paddingPriceButton);
 
-  background-color: $primaryBrand;
+  background-color: c.$primaryBrand;
   border: none;
   border-radius: 35px;
 
@@ -133,7 +133,7 @@ input[type="checkbox"]:checked + .checkbox {
   text-transform: uppercase;
 }
 
-@media (min-width: $mobileBreakPoint) {
+@media (min-width: b.$mobileBreakPoint) {
   .container-contacts {
     grid-template-columns: 230px 1fr;
     align-items: start;

@@ -1,7 +1,4 @@
-@import "../styles/variables/breakpoints";
-@import "../styles/variables/fonts";
-@import "../styles/variables/colors";
-@import "../styles/variables/mixins";
+@use "../styles/variables/mixins" as m;
 
 .footer {
   width: 100%;
@@ -20,7 +17,7 @@
       align-items: flex-start;
 
       .logo {
-        @include logoStyle(22px);
+        @include m.logoStyle(22px);
       }
 
       .footer-C {
