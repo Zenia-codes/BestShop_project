@@ -26,6 +26,11 @@
   flex-direction: column;
   gap: 10px;
 
+  a {
+    color: c.$colorFontHover;
+    font-size: 14px;
+  }
+
   img {
     width: 20px;
     height: 20px;
@@ -133,7 +138,7 @@ input[type="checkbox"]:checked + .checkbox {
   text-transform: uppercase;
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .container-contacts {
     grid-template-columns: 230px 1fr;
     align-items: start;

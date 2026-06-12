@@ -138,7 +138,7 @@
   transform: rotate(45deg);
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .benefits {
     .benefits-text {
       padding: 40px 30px;

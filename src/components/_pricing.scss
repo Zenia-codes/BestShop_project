@@ -138,7 +138,7 @@
   font-weight: 600;
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .pricing_boxes {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: stretch;

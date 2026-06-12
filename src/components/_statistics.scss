@@ -63,7 +63,7 @@ img[src*="Person"] {
   }
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .stat-boxes-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 0;

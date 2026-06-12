@@ -18,6 +18,15 @@
 //   outline: 1px solid red;
 // }
 
+:root {
+  --gradient-gold: linear-gradient(
+    180deg,
+    #ffd922 0%,
+    #eaae0c 50%,
+    #c9970b 100%
+  );
+}
+
 html,
 body {
   background-color: white;
@@ -70,7 +79,11 @@ h3 {
   text-align: center;
 }
 
-a,
+a {
+  color: white;
+  font-weight: 400;
+}
+
 p,
 li,
 input,
@@ -142,7 +155,7 @@ div {
   }
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .article {
     font-size: 14px;
   }

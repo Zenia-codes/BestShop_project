@@ -225,7 +225,7 @@
   display: none;
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .calc {
     &__contain {
       grid-template-columns: 240px 130px 1fr;

@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .footer__container {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;

@@ -2,52 +2,119 @@
 @use "../styles/variables/mixins" as m;
 @use "../styles/variables/breakpoints" as b;
 
-.opening {
-  min-height: 90dvh;
+// .opening {
+//   border: 2px solid red;
+// }
 
-  .image-bg {
-    position: relative;
-    width: 100%;
-    background: url(../assets/background/background_higher-profits_mobil.png)
-      no-repeat center/cover;
-    aspect-ratio: 4/3;
-    margin: 55px 0 35px;
+// .opening_container {
+//   border: 2px solid blue;
+// }
+
+// .image-bg {
+//   border: 2px solid green;
+// }
+
+.opening {
+  display: grid;
+  align-items: start;
+  min-height: 85dvh;
+  padding-block: 50px 80px;
+
+  .opening_container {
+    display: grid;
+    justify-content: center;
+
+    .wrapper_title {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 3px;
+      justify-items: end;
+      gap: 8px;
+      width: fit-content;
+
+      .hero-line {
+        width: 2.5px;
+        background: c.$primaryBrand;
+      }
+
+      .title_row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        width: 100%;
+
+        .icon {
+          width: 33px;
+        }
+
+        .title_opening {
+          font-size: 25px;
+        }
+      }
+
+      .opening_content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        grid-column: 1;
+
+        text-align: right;
+
+        .subtitle_opening {
+          font-weight: 400;
+          padding-bottom: 0;
+          font-size: 15.5px;
+          width: 100%;
+        }
+
+        .logo img {
+          width: 120px;
+        }
+      }
+    }
   }
 
-  .btn {
-    position: relative;
-    @include m.button(0.9em 3em);
+  .image-bg {
+    background: url(../assets/background/bestshop__hero_mobil.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero_actions .btn {
+    @include m.button(0.6em 3em);
     background-color: c.$primaryBrand;
     text-transform: uppercase;
-
-    justify-self: center;
+    width: 70%;
+    margin: auto;
   }
 }
 
-@media (min-width: b.$mobileBreakPoint) {
+@media (min-width: b.$tabletBreakPoint) {
   .opening {
-    position: relative;
-
-    display: grid;
-    align-items: center;
-
-    grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
 
     .image-bg {
-      background: url(../assets/background/background_higher-profits.png)
-        no-repeat center/cover;
-      grid-column: 1 / 2;
-      aspect-ratio: 16/9;
-      margin: 0;
+      background: url(../assets/background/desktop_version.png) no-repeat
+        center/contain;
+      aspect-ratio: 7 / 3;
+      width: min(100%, 1100px);
     }
 
-    .btn {
-      grid-column: 2 / 3;
-      justify-self: start;
-      margin-top: -70px;
-      margin-left: -120px;
-      letter-spacing: 0.1em;
-      padding: 1.1em 6em;
+    .row3 {
+      grid-row: 2;
+      margin: 0px auto;
+      width: 40%;
+    }
+
+    .hero_actions .btn {
+      width: auto;
     }
   }
+}
+
+@media (min-width: b.$desktopBreakPoint) {
 }
