@@ -51,7 +51,7 @@ img[src*="Person"] {
   display: grid;
   grid-template-columns: 1fr;
   margin-block: 20px;
-  gap: 10px;
+  gap: 40px;
 
   .statistic-box {
     display: flex;
@@ -66,7 +66,7 @@ img[src*="Person"] {
 @media (min-width: b.$tabletBreakPoint) {
   .stat-boxes-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    gap: 10px;
     margin-block: 50px;
   }
 }
