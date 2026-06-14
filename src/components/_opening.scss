@@ -2,18 +2,6 @@
 @use "../styles/variables/mixins" as m;
 @use "../styles/variables/breakpoints" as b;
 
-// .opening {
-//   border: 2px solid red;
-// }
-
-// .opening_container {
-//   border: 2px solid blue;
-// }
-
-// .image-bg {
-//   border: 2px solid green;
-// }
-
 .opening {
   display: grid;
   align-items: start;
@@ -31,19 +19,16 @@
       grid-template-columns: minmax(0, auto) 3px;
       justify-items: end;
       gap: 8px;
-      // width: fit-content;
 
       .hero-line {
         width: 2.5px;
-        background: c.$primaryBrand;
+        background: c.$color-gold-light;
       }
 
       .title_row {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-
-        // width: 100%;
 
         .icon {
           width: 33px;
@@ -86,7 +71,7 @@
 
   .hero_actions .btn {
     @include m.button(0.6em 3em);
-    background-color: c.$primaryBrand;
+    background: c.$gradient-gold;
     text-transform: uppercase;
     width: 70%;
     margin: auto;
@@ -134,13 +119,5 @@
       margin: 0px auto;
       width: 40%;
     }
-
-    .hero_actions .btn {
-      // margin: 0;
-      // transform: translate(10px, 20px);
-    }
   }
-}
-
-@media (min-width: b.$desktopBreakPoint) {
 }

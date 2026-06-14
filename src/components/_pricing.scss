@@ -63,7 +63,7 @@
   }
 
   .btn--professional {
-    background-color: c.$primaryBrand;
+    background: c.$gradient-gold;
   }
 
   .btn--premium {
@@ -84,7 +84,7 @@
 }
 
 .pricing-box--professional {
-  border: 1px solid c.$colorGoldButton;
+  border: 1px solid c.$color-gold-middle;
   box-shadow: 3px 4px 15px oklch(80.7647% 0.169852 75.7153 / 0.1);
   min-height: 260px;
   max-width: 300px;
@@ -126,7 +126,7 @@
 }
 
 .price-color--gold {
-  color: c.$colorGoldButton;
+  @include m.gradient-text(c.$gradient-gold);
 }
 
 .price-color--green {

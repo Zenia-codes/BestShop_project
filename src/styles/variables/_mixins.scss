@@ -23,14 +23,11 @@
   }
 }
 
-@mixin logoStyle($fontSize: 32px) {
-  font-family: f.$mainFont;
-  font-size: $fontSize;
-  color: c.$primaryBrand;
-  text-decoration: none;
-  font-weight: 500;
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }

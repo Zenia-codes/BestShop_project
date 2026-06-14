@@ -29,7 +29,7 @@
   &__select .select__input {
     width: 100%;
     border-radius: 6px;
-    border: 1px solid c.$primaryBrand;
+    border: 1px solid c.$color-gold-middle;
     padding: 11px 15px;
     line-height: 1em;
     font-size: 0.8125rem;
@@ -66,8 +66,8 @@
         width: 8px;
         height: 8px;
 
-        border-right: 2px solid c.$primaryBrand;
-        border-bottom: 2px solid c.$primaryBrand;
+        border-right: 2px solid c.$color-gold-middle;
+        border-bottom: 2px solid c.$color-gold-middle;
 
         transform: rotate(45deg);
         transition: transform 0.3s ease;
@@ -148,7 +148,7 @@
   .summary__total {
     align-self: flex-end;
     padding: 8px 40px;
-    background-color: c.$primaryBrand;
+    background: c.$gradient-gold;
 
     .total__price {
       font-size: 1.25rem;
@@ -165,7 +165,6 @@
     }
   }
 }
-// }
 
 .list__item {
   position: relative;

@@ -3,6 +3,7 @@
 @use "./variables/breakpoints" as b;
 @use "./variables/fonts" as f;
 @use "./variables/colors" as c;
+@use "./variables/mixins" as m;
 
 @use "../components/header/header";
 @use "../components/opening";
