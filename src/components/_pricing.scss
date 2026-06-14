@@ -79,12 +79,12 @@
 }
 
 .pricing-box--basic {
-  border: 1px solid list.nth($list: c.$boxColors, $n: 3);
+  border: 1px solid c.$colorBlueButton;
   box-shadow: 3px 4px 15px oklch(78.467% 0.13162 219.341 / 0.1);
 }
 
 .pricing-box--professional {
-  border: 1px solid list.nth($list: c.$boxColors, $n: 1);
+  border: 1px solid c.$colorGoldButton;
   box-shadow: 3px 4px 15px oklch(80.7647% 0.169852 75.7153 / 0.1);
   min-height: 260px;
   max-width: 300px;
@@ -93,7 +93,7 @@
 }
 
 .pricing-box--premium {
-  border: 1px solid list.nth($list: c.$boxColors, $n: 2);
+  border: 1px solid c.$colorGreenButton;
   box-shadow: 3px 4px 15px oklch(84.652% 0.18702 161.498 / 0.1);
 }
 
@@ -121,16 +121,16 @@
   font-family: f.$numberFont;
 }
 
-.price-color1 {
-  color: list.nth($list: c.$boxColors, $n: 3);
+.price-color--blue {
+  color: c.$colorBlueButton;
 }
 
-.price-color2 {
-  color: list.nth($list: c.$boxColors, $n: 1);
+.price-color--gold {
+  color: c.$colorGoldButton;
 }
 
-.price-color3 {
-  color: list.nth($list: c.$boxColors, $n: 2);
+.price-color--green {
+  color: c.$colorGreenButton;
 }
 
 .pricing-limited {

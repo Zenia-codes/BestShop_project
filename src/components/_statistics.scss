@@ -23,14 +23,14 @@
     position: absolute;
   }
 
-  &.circle-color1 {
-    background-color: list.nth(c.$boxColors, 1);
+  &.circle-color--gold {
+    background-color: c.$colorGoldButton;
   }
-  &.circle-color2 {
-    background-color: list.nth(c.$boxColors, 3);
+  &.circle-color--blue {
+    background-color: c.$colorBlueButton;
   }
-  &.circle-color3 {
-    background-color: list.nth(c.$boxColors, 2);
+  &.circle-color--green {
+    background-color: c.$colorGreenButton;
   }
 }
 

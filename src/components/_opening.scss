@@ -22,15 +22,16 @@
 
   .opening_container {
     display: grid;
+    // justify-content: center;
     justify-content: center;
 
     .wrapper_title {
       position: relative;
       display: grid;
-      grid-template-columns: auto 3px;
+      grid-template-columns: minmax(0, auto) 3px;
       justify-items: end;
       gap: 8px;
-      width: fit-content;
+      // width: fit-content;
 
       .hero-line {
         width: 2.5px;
@@ -42,7 +43,7 @@
         align-items: flex-end;
         justify-content: space-between;
 
-        width: 100%;
+        // width: 100%;
 
         .icon {
           width: 33px;
@@ -77,7 +78,7 @@
 
   .image-bg {
     background: url(../assets/background/bestshop__hero_mobil.png);
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     aspect-ratio: 4 / 3;
@@ -94,14 +95,38 @@
 
 @media (min-width: b.$tabletBreakPoint) {
   .opening {
-    grid-template-rows: auto auto 1fr;
     justify-items: center;
+
+    .opening_container {
+      .wrapper_title {
+        grid-template-columns: 1fr;
+        justify-items: start;
+
+        .hero-line {
+          display: none;
+        }
+
+        .title_row {
+          justify-content: start;
+          gap: 11px;
+        }
+
+        .opening_content {
+          flex-direction: row;
+          align-items: flex-end;
+
+          .subtitle_opening {
+            padding-bottom: 3px;
+          }
+        }
+      }
+    }
 
     .image-bg {
       background: url(../assets/background/desktop_version.png) no-repeat
         center/contain;
       aspect-ratio: 7 / 3;
-      width: min(100%, 1100px);
+      width: min(100%, 1200px);
     }
 
     .row3 {
@@ -111,7 +136,8 @@
     }
 
     .hero_actions .btn {
-      width: auto;
+      // margin: 0;
+      // transform: translate(10px, 20px);
     }
   }
 }

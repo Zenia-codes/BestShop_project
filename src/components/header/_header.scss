@@ -36,7 +36,7 @@
   pointer-events: none;
   transition: max-height 0.3s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-
+  //Mobilní navigace (rozbalena)
   &.is-open {
     opacity: 1;
     pointer-events: auto;
@@ -46,11 +46,11 @@
       color: c.$color-gold-dark;
       font-weight: 500;
       border-bottom: 1.5px solid c.$color-gold-dark;
+      // padding-block: 15px;
     }
 
-    ul {
+    .ul_seznam {
       align-items: inherit;
-      margin: 15px 0;
       text-align: center;
     }
   }
@@ -60,20 +60,21 @@
     flex-direction: column;
     align-items: center;
     list-style: none;
-    margin: 0;
+    // margin: 0;
     position: relative;
 
     li {
-      margin: 10px 0;
+      // margin: 10px 0;
 
       a {
         font-size: 11px;
-        letter-spacing: 2px;
+        // letter-spacing: 2px;
+        font-weight: 500;
         text-transform: uppercase;
         text-decoration: none;
         transition: color 0.2s, font-weight 0.2s, transform 0.2s;
         display: block;
-        padding: 10px 0;
+        // padding: 15px 10px;
       }
 
       a:hover {
@@ -91,8 +92,12 @@
   font-size: 23px;
   color: white;
   background-color: transparent;
-  padding: 20px;
+  // padding: 25px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 0;
+  display: flex;
   cursor: pointer;
 }
 
@@ -145,10 +150,11 @@
 
     .ul_seznam {
       flex-direction: row;
-      gap: 20px;
+      gap: 30px;
 
       li a {
         font-size: 13px;
+        // letter-spacing: 1.5px;
       }
       a:hover {
         color: c.$colorFontHover;

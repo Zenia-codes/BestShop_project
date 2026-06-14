@@ -33,9 +33,8 @@
 
 .socials_list {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   gap: 20px;
-  // padding-top: 5px;
   a {
     display: inline-block;
     color: c.$colorFontHover;
@@ -52,7 +51,7 @@
 
 @media (min-width: b.$tabletBreakPoint) {
   .footer__container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto 1.2fr auto;
     align-items: center;
   }
 
