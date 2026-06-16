@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "../styles/variables/breakpoints" as b;
 @use "../styles/variables/colors" as c;
+@use "../styles/variables/gradient" as g;
 
 .number-style {
   font-size: 20px;
@@ -24,13 +25,13 @@
   }
 
   &.circle-color--gold {
-    background-color: c.$colorGoldButton;
+    background: g.$gradient-gold-button;
   }
   &.circle-color--blue {
-    background-color: c.$colorBlueButton;
+    background: g.$gradient-blue-button;
   }
   &.circle-color--green {
-    background-color: c.$colorGreenButton;
+    background: g.$gradient-green-button;
   }
 }
 

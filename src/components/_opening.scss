@@ -1,6 +1,7 @@
 @use "../styles/variables/colors" as c;
 @use "../styles/variables/mixins" as m;
 @use "../styles/variables/breakpoints" as b;
+@use "../styles/variables/gradient" as g;
 
 .opening {
   display: grid;
@@ -10,7 +11,6 @@
 
   .opening_container {
     display: grid;
-    // justify-content: center;
     justify-content: center;
 
     .wrapper_title {
@@ -71,7 +71,7 @@
 
   .hero_actions .btn {
     @include m.button(0.6em 3em);
-    background: c.$gradient-gold;
+    background: g.$gradient-gold-button;
     text-transform: uppercase;
     width: 70%;
     margin: auto;

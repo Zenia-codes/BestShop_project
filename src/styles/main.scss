@@ -4,6 +4,7 @@
 @use "./variables/fonts" as f;
 @use "./variables/colors" as c;
 @use "./variables/mixins" as m;
+@use "./variables/gradient" as g;
 
 @use "../components/header/header";
 @use "../components/opening";
@@ -18,15 +19,6 @@
 // * {
 //   outline: 1px solid red;
 // }
-
-:root {
-  --gradient-gold: linear-gradient(
-    180deg,
-    #ffd922 0%,
-    #eaae0c 50%,
-    #c9970b 100%
-  );
-}
 
 html,
 body {

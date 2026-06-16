@@ -2,6 +2,7 @@
 @use "../styles/variables/colors" as c;
 @use "../styles/variables/mixins" as m;
 @use "../styles/variables/paddingButton" as p;
+@use "../styles/variables/gradient" as g;
 
 .container-contacts {
   display: grid;
@@ -129,7 +130,7 @@ input[type="checkbox"]:checked + .checkbox {
 
   @include m.button(p.$paddingPriceButton);
 
-  background: c.$gradient-gold;
+  background: g.$gradient-gold-button;
   border: none;
   border-radius: 35px;
 

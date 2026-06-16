@@ -1,13 +1,14 @@
 @use "../../styles/variables/breakpoints" as b;
 @use "../../styles/variables/colors" as c;
 @use "../../styles/variables/mixins" as m;
+@use "../../styles/variables/gradient" as g;
 
 .header {
   position: sticky;
   top: 0; // nezapomeň!!! jinak sticky nefunguje
   height: 70px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  background: var(--gradient-gold);
+  background: g.$gradient-gold-flat;
   padding-inline: 20px;
   z-index: 10;
 }
@@ -64,8 +65,6 @@
     position: relative;
 
     li {
-      // margin: 10px 0;
-
       a {
         font-size: 14px;
         letter-spacing: 0.1em;
@@ -91,7 +90,6 @@
   font-size: 23px;
   color: white;
   background-color: transparent;
-  // padding: 25px;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -153,8 +151,8 @@
 
       li a {
         font-size: 13px;
-        // letter-spacing: 1.5px;
       }
+
       a:hover {
         color: c.$colorFontHover;
         font-weight: 700;

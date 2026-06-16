@@ -1,0 +1,29 @@
+@use "./colors" as c;
+
+$gradient-gold-flat: linear-gradient(
+  180deg,
+  c.$color-gold-light 0%,
+  c.$color-gold-middle 50%,
+  c.$color-gold-dark 100%
+);
+
+$gradient-gold-button: linear-gradient(
+  180deg,
+  c.$color-gold-light 0%,
+  c.$color-gold-middle 90%,
+  c.$color-gold-dark 100%
+);
+
+$gradient-green-button: linear-gradient(
+  180deg,
+  c.$color-green-light 0%,
+  c.$color-green-middle 70%,
+  c.$color-green-dark 100%
+);
+
+$gradient-blue-button: linear-gradient(
+  180deg,
+  c.$color-blue-light 0%,
+  c.$color-blue-middle 80%,
+  c.$color-blue-dark 100%
+);

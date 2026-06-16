@@ -1,8 +1,3 @@
-// Colors of buttons
-$colorGreenButton: oklch(84.652% 0.18702 161.498);
-$colorBlueButton: oklch(78.467% 0.13162 219.341);
-$colorGoldButton: #ffd922;
-
 // Colors of fonts
 $colorSmallFonts: oklch(0.6625 0.0035 17.25);
 $colorFontHover: oklch(0.299 0.0211 196.07);
@@ -14,15 +9,15 @@ $LightGreyBackground: oklch(0.9672 0 0);
 $colorBorder: oklch(0.9344 0.0055 274.96);
 $boxShadow: oklch(0.6829 0 0 / 20.4%);
 
-// Colors of gradient
-$color-gold-light: #ffd922;
-$color-gold-middle: #eaae0c;
-$color-gold-dark: #c9970b;
+// Colors of gradients
+$color-gold-light: oklch(0.8914 0.1775 95.64);
+$color-gold-middle: oklch(0.7857 0.1597 83.22);
+$color-gold-dark: oklch(0.7049 0.1426 84.41);
 
-//Gradient
-$gradient-gold: linear-gradient(
-  180deg,
-  $color-gold-light 0%,
-  $color-gold-middle 90%,
-  $color-gold-dark 100%
-);
+$color-green-light: oklch(88.553% 0.19571 158.319);
+$color-green-middle: oklch(0.8094 0.2679 161.498);
+$color-green-dark: oklch(78.864% 0.20881 151.608);
+
+$color-blue-light: oklch(85.045% 0.08809 215.165);
+$color-blue-middle: oklch(78.467% 0.13162 219.341);
+$color-blue-dark: oklch(71.432% 0.12226 219.699);

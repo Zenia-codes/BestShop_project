@@ -4,6 +4,7 @@
 @use "../styles/variables/fonts" as f;
 @use "../styles/variables/mixins" as m;
 @use "../styles/variables/paddingButton" as p;
+@use "../styles/variables/gradient" as g;
 
 .pricing-title {
   text-align: center;
@@ -59,15 +60,15 @@
   }
 
   .btn--basic {
-    background-color: c.$colorBlueButton;
+    background: g.$gradient-blue-button;
   }
 
   .btn--professional {
-    background: c.$gradient-gold;
+    background: g.$gradient-gold-button;
   }
 
   .btn--premium {
-    background-color: c.$colorGreenButton;
+    background: g.$gradient-green-button;
   }
 }
 
@@ -79,12 +80,12 @@
 }
 
 .pricing-box--basic {
-  border: 1px solid c.$colorBlueButton;
+  border: 1px solid c.$color-blue-light;
   box-shadow: 3px 4px 15px oklch(78.467% 0.13162 219.341 / 0.1);
 }
 
 .pricing-box--professional {
-  border: 1px solid c.$color-gold-middle;
+  border: 1px solid c.$color-gold-light;
   box-shadow: 3px 4px 15px oklch(80.7647% 0.169852 75.7153 / 0.1);
   min-height: 260px;
   max-width: 300px;
@@ -93,7 +94,7 @@
 }
 
 .pricing-box--premium {
-  border: 1px solid c.$colorGreenButton;
+  border: 1px solid c.$color-green-light;
   box-shadow: 3px 4px 15px oklch(84.652% 0.18702 161.498 / 0.1);
 }
 
@@ -122,15 +123,15 @@
 }
 
 .price-color--blue {
-  color: c.$colorBlueButton;
+  @include m.gradient-text(g.$gradient-blue-button);
 }
 
 .price-color--gold {
-  @include m.gradient-text(c.$gradient-gold);
+  @include m.gradient-text(g.$gradient-gold-button);
 }
 
 .price-color--green {
-  color: c.$colorGreenButton;
+  @include m.gradient-text(g.$gradient-green-button);
 }
 
 .pricing-limited {

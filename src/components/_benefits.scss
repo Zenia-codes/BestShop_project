@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "../styles/variables/breakpoints" as b;
 @use "../styles/variables/colors" as c;
+@use "../styles/variables/gradient" as g;
 
 .benefits {
   width: 100%;
@@ -38,7 +39,7 @@
   }
 
   .benefits-double--green {
-    background-color: c.$colorGreenButton;
+    background: g.$gradient-green-button;
   }
 
   .benefits-image {
@@ -81,15 +82,15 @@
   }
 
   .benefits-color--gold::after {
-    background-color: c.$colorGoldButton;
+    background-color: c.$color-gold-light;
   }
 
   .benefits-color--blue::after {
-    background-color: c.$colorBlueButton;
+    background-color: c.$color-blue-light;
   }
 
   .benefits-color--green::after {
-    background-color: c.$colorGreenButton;
+    background-color: c.$color-green-light;
   }
 
   .benefits-text {

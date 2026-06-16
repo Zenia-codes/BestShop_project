@@ -3,6 +3,7 @@
 @use "../../styles/variables/fonts" as f;
 @use "../../styles/variables/paddingButton" as p;
 @use "../../styles/variables/mixins" as m;
+@use "../../styles/variables/gradient" as g;
 
 .calc {
   padding: 50px 0;
@@ -128,7 +129,7 @@
     .list__item {
       min-height: 40px;
       padding: 8px 45px 8px 15px;
-      background-color: c.$colorGreenButton;
+      background: g.$gradient-green-button;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 6px;
       align-items: center;
@@ -148,7 +149,7 @@
   .summary__total {
     align-self: flex-end;
     padding: 8px 40px;
-    background: c.$gradient-gold;
+    background: g.$gradient-gold-button;
 
     .total__price {
       font-size: 1.25rem;
