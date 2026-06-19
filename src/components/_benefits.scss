@@ -39,7 +39,12 @@
   }
 
   .benefits-double--green {
-    background: g.$gradient-green-button;
+    background: linear-gradient(
+      180deg,
+      c.$color-green-light 0%,
+      c.$color-green-middle 50%,
+      c.$color-green-dark 100%
+    );
   }
 
   .benefits-image {

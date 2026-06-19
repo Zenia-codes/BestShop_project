@@ -70,11 +70,35 @@
   }
 
   .hero_actions .btn {
-    @include m.button(0.6em 3em);
-    background: g.$gradient-gold-button;
+    position: relative;
+
+    @include m.button(0.6em 3.5em);
+    background: white;
+    border: none;
     text-transform: uppercase;
     width: 70%;
     margin: auto;
+    @include m.gradient-text(g.$gradient-gold-flat);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      inset: 0;
+      padding: 3px;
+      border-radius: inherit;
+      background: g.$gradient-gold-button;
+
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      pointer-events: none;
+    }
   }
 }
 
