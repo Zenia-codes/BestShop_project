@@ -7,7 +7,7 @@
   display: grid;
   align-items: start;
   min-height: 85vh;
-  padding-block: 50px 80px;
+  padding-block: 70px 80px;
 
   .opening_container {
     display: grid;
@@ -36,7 +36,11 @@
         }
 
         .title_opening {
-          font-size: 25px;
+          font-size: clamp(
+            25px,
+            calc(25px + (37 - 25) * ((100vw - 425px) / (1440 - 425))),
+            37px
+          );
         }
       }
 
@@ -51,12 +55,20 @@
         .subtitle_opening {
           font-weight: 400;
           padding-bottom: 0;
-          font-size: 15.5px;
+          font-size: clamp(
+            15.5px,
+            calc(15.5px + (21 - 15.5) * ((100vw - 425px) / (1440 - 425))),
+            21px
+          );
           width: 100%;
         }
 
         .logo img {
-          width: 120px;
+          width: clamp(
+            120px,
+            calc(120px + (150 - 120) * ((100vw - 425px) / (1440 - 425))),
+            150px
+          );
         }
       }
     }
@@ -64,7 +76,7 @@
 
   .image-bg {
     background: url(../assets/background/bestshop__hero_mobil.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     aspect-ratio: 4 / 3;
@@ -73,20 +85,35 @@
   .hero_actions .btn {
     position: relative;
 
-    @include m.button(0.6em 3.5em);
+    @include m.button(0.7em 3.5em);
     background: white;
-    border: none;
     text-transform: uppercase;
-    width: 70%;
+
+    width: clamp(
+      260px,
+      calc(260px + (390 - 260) * ((100vw - 320px) / (1440 - 320))),
+      390px
+    );
+
+    height: auto;
     margin: auto;
-    @include m.gradient-text(g.$gradient-gold-flat);
-    font-weight: 700;
-    letter-spacing: 0.05em;
+
+    span {
+      @include m.gradient-text(g.$gradient-gold-flat);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-shadow: 0 1px 1px #cccccc36;
+
+      font-size: clamp(
+        14px,
+        calc(14px + (19 - 14) * ((100vw - 320px) / (1440 - 320))),
+        19px
+      );
+    }
 
     &::before {
       content: "";
       position: absolute;
-
       inset: 0;
       padding: 3px;
       border-radius: inherit;
@@ -94,6 +121,8 @@
 
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -105,12 +134,16 @@
 
 @media (min-width: b.$tabletBreakPoint) {
   .opening {
-    justify-items: center;
+    grid-template-columns: 1fr auto;
+    row-gap: 8px;
 
     .opening_container {
+      justify-self: center;
+      transform: translateX(30px);
+
       .wrapper_title {
-        grid-template-columns: 1fr;
         justify-items: start;
+        grid-template-columns: none;
 
         .hero-line {
           display: none;
@@ -126,28 +159,43 @@
           align-items: flex-end;
 
           .subtitle_opening {
-            padding-bottom: 3px;
+            padding-bottom: 4px;
           }
         }
       }
     }
 
     .image-bg {
-      background: url(../assets/background/desktop_version.png) no-repeat
-        center/contain;
+      width: min(100%, 1250px);
       aspect-ratio: 7 / 3;
-      width: min(100%, 1200px);
+      background: url(../assets/background/desktop_version.png) no-repeat
+        center/cover;
+      margin: auto;
+      grid-column: 1/-1;
+      transform: translateY(-10px);
     }
 
     .row3 {
       grid-row: 2;
-      margin: 0px auto;
-      width: 40%;
+      transform: translateX(60px);
+      justify-self: center;
+    }
+  }
+}
+
+@media (min-width: b.$desktopBreakPoint) {
+  .opening {
+    padding-block: 70px;
+    row-gap: 20px;
+    .opening_container {
+      transform: translateX(120px);
+    }
+    .image-bg {
+      transform: translate(-20px, -70px);
     }
 
-    .hero_actions .btn {
-      @include m.button(0.6em 3.5em);
-      width: 100%;
+    .row3 {
+      transform: translateX(150px);
     }
   }
 }
