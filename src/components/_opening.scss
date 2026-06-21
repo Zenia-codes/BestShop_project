@@ -84,19 +84,17 @@
 
   .hero_actions .btn {
     position: relative;
-
-    @include m.button(0.7em 3.5em);
-    background: white;
-    text-transform: uppercase;
-
+    height: auto;
+    margin: auto;
     width: clamp(
       260px,
       calc(260px + (390 - 260) * ((100vw - 320px) / (1440 - 320))),
       390px
     );
 
-    height: auto;
-    margin: auto;
+    @include m.button(0.7em 3.5em);
+    background: white;
+    text-transform: uppercase;
 
     span {
       @include m.gradient-text(g.$gradient-gold-flat);
@@ -129,6 +127,10 @@
 
       pointer-events: none;
     }
+  }
+
+  .row3 {
+    transform: translateY(-20px);
   }
 }
 
@@ -177,7 +179,7 @@
 
     .row3 {
       grid-row: 2;
-      transform: translateX(60px);
+      transform: translate(60px, 0);
       justify-self: center;
     }
   }
@@ -195,7 +197,7 @@
     }
 
     .row3 {
-      transform: translateX(150px);
+      transform: translate(150px, 0);
     }
   }
 }
