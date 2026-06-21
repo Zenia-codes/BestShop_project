@@ -40,7 +40,7 @@ body {
 }
 
 section {
-  scroll-margin-top: 70px; /* výška headeru */
+  scroll-margin-top: 60px; /* výška headeru */
 }
 
 .whyUs,
@@ -61,10 +61,24 @@ section {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: c.$colorFontHover;
   font-weight: 700;
   text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 17px;
+  line-height: 1.2em;
+}
+
+h3 {
+  font-size: 17px;
 }
 
 a {
@@ -87,21 +101,14 @@ strong {
   color: c.$colorSmallFonts;
 }
 
-h1 {
-  font-size: 35px;
-}
-
-h2 {
-  font-size: 17px;
-  padding-bottom: 10px;
-  line-height: 1.2em;
-}
-
-h3 {
-  font-size: 17px;
+.number,
+label,
+div {
+  color: c.$colorFontHover;
 }
 
 span {
+  color: c.$colorFontHover;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;

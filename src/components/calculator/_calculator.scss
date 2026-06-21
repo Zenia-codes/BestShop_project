@@ -195,14 +195,13 @@
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
-  color: white;
-  border: 1px solid white;
+  border: 1px solid #b8b8b8;
   border-radius: 4px;
   padding: 3px 6px;
   margin-right: 5px;
   cursor: pointer;
   font-size: 4px;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   transition: 0.2s;
 }
@@ -258,6 +257,6 @@
 
   .item__type.active {
     font-weight: 700;
-    color: #26c794;
+    color: c.$color-green-dark;
   }
 }
