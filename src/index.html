@@ -372,50 +372,62 @@
               </label>
             </form>
             <!-- tabulka placeholder-->
-            <div class="calculator-result">
-              <ul class="calc__preview">
-                <li class="item__type" data-id="products">Products :</li>
-                <li class="item__type" data-id="orders">Orders :</li>
-                <li class="item__type" data-id="package">Package :</li>
-                <li class="item__type" data-id="accounting">Accounting :</li>
-                <li class="item__type" data-id="terminal">Terminal :</li>
-              </ul>
-            </div>
-            <!-- tabulka s výpočtem cen -->
-            <div class="calc__summary">
-              <ul>
-                <li class="list__item" data-id="products">
-                  <span class="item__type">Products</span>
-                  <span class="item__calc">20 * 0.5 $</span>
-                  <span class="item__price">0.00 $</span>
-                  <button class="item__remove">✖</button>
-                </li>
-                <li class="list__item" data-id="orders">
-                  <span class="item__type">Orders</span>
-                  <span class="item__calc">20 * 0.5 $</span>
-                  <span class="item__price">0.00 $</span>
-                  <button class="item__remove">✖</button>
-                </li>
-                <li class="list__item" data-id="package">
-                  <span class="item__type">Package</span>
-                  <span class="item__calc">Premium</span>
-                  <span class="item__price">0.00 $</span>
-                  <button class="item__remove">✖</button>
-                </li>
-                <li class="list__item" data-id="accounting">
-                  <span class="item__type">Accounting</span>
-                  <span class="item__price">0.00 $</span>
-                  <button class="item__remove">✖</button>
-                </li>
-                <li class="list__item" data-id="terminal">
-                  <span class="item__type">Terminal</span>
-                  <span class="item__price">0.00 $</span>
-                  <button class="item__remove">✖</button>
-                </li>
-              </ul>
-              <div class="summary__total" id="total-price">
-                <span>Total</span>
-                <span class="total__price">700 $</span>
+            <div class="wrapper__resultSumm">
+              <div class="calculator__result">
+                <ul class="calc__preview">
+                  <li class="item__type" data-id="products">Products :</li>
+                  <li class="item__type" data-id="orders">Orders :</li>
+                  <li class="item__type" data-id="package">Package :</li>
+                  <li class="item__type" data-id="accounting">Accounting :</li>
+                  <li class="item__type" data-id="terminal">Terminal :</li>
+                </ul>
+              </div>
+              <!-- tabulka s výpočtem cen -->
+              <div class="calc__summary">
+                <ul class="ul__summary">
+                  <li class="list__item" data-id="products">
+                    <span class="item__type">Products</span>
+                    <span class="item__calc">20 * 0.5 $</span>
+                    <div class="wrapper_priceRemove">
+                      <span class="item__price">0.00 $</span>
+                      <button class="item__remove">✖</button>
+                    </div>
+                  </li>
+                  <li class="list__item" data-id="orders">
+                    <span class="item__type">Orders</span>
+                    <span class="item__calc">20 * 0.5 $</span>
+                    <div class="wrapper_priceRemove">
+                      <span class="item__price">0.00 $</span>
+                      <button class="item__remove">✖</button>
+                    </div>
+                  </li>
+                  <li class="list__item" data-id="package">
+                    <span class="item__type">Package</span>
+                    <span class="item__calc">Premium</span>
+                    <div class="wrapper_priceRemove">
+                      <span class="item__price">0.00 $</span>
+                      <button class="item__remove">✖</button>
+                    </div>
+                  </li>
+                  <li class="list__item" data-id="accounting">
+                    <span class="item__type">Accounting</span>
+                    <div class="wrapper_priceRemove">
+                      <span class="item__price">0.00 $</span>
+                      <button class="item__remove">✖</button>
+                    </div>
+                  </li>
+                  <li class="list__item" data-id="terminal">
+                    <span class="item__type">Terminal</span>
+                    <div class="wrapper_priceRemove">
+                      <span class="item__price">0.00 $</span>
+                      <button class="item__remove">✖</button>
+                    </div>
+                  </li>
+                </ul>
+                <div class="summary__total" id="total-price">
+                  <span>Total</span>
+                  <span class="total__price">700 $</span>
+                </div>
               </div>
             </div>
           </div>

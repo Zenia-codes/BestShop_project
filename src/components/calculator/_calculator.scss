@@ -6,13 +6,12 @@
 @use "../../styles/variables/gradient" as g;
 
 .calc {
-  padding: 50px 0;
   background-color: c.$LightGreyBackground;
 
   &__contain {
     width: 100%;
     max-width: 800px;
-    margin-block: 30px;
+    margin-block: 50px;
     display: grid;
     margin-inline: auto;
   }
@@ -110,52 +109,66 @@
   }
 
   &__summary {
+    display: grid;
+    gap: 20px;
+
     width: 100%;
     min-width: 0;
+  }
 
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  .wrapper__resultSumm {
+    display: grid;
 
-    margin-left: 0;
-
-    ul {
-      display: flex;
-      flex-direction: column;
+    .ul__summary {
+      display: grid;
       gap: 10px;
+
+      .list__item[data-id="products"] {
+        order: 0;
+      }
+      .list__item[data-id="orders"] {
+        order: 1;
+      }
+      .list__item[data-id="package"] {
+        order: 2;
+      }
+      .list__item[data-id="accounting"] {
+        order: 3;
+      }
+      .list__item[data-id="terminal"] {
+        order: 4;
+      }
     }
 
     .summary__total,
     .list__item {
+      display: flex;
       min-height: 40px;
-      padding: 8px 45px 8px 15px;
-      background: g.$gradient-green-button;
+      padding: 8px 12px;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
       border-radius: 6px;
       align-items: center;
-      color: white;
-      display: flex;
+    }
+
+    .list__item {
+      background: g.$gradient-green-button;
+      justify-content: space-between;
 
       & > :first-child {
         display: inline-block;
       }
-
-      .item__calc {
-        overflow-wrap: anywhere;
-      }
     }
-  }
 
-  .summary__total {
-    align-self: flex-end;
-    padding: 8px 40px;
-    background: g.$gradient-gold-button;
+    .summary__total {
+      justify-content: end;
+      gap: 10px;
+      background: g.$gradient-gold-button;
 
-    .total__price {
-      font-size: 1.25rem;
-      font-weight: 700;
-      padding-left: 10px;
-      font-family: f.$numberFont;
+      .total__price {
+        font-weight: 700;
+        font-family: f.$numberFont;
+        font-size: 16px;
+      }
     }
   }
 
@@ -163,51 +176,24 @@
     &__price {
       font-weight: 600;
       font-family: f.$numberFont;
+      font-size: 14px;
     }
   }
 }
 
-.list__item {
-  position: relative;
-  min-width: 0;
-  justify-content: space-between;
-}
-
-.list__item[data-id="products"] {
-  order: 0;
-}
-.list__item[data-id="orders"] {
-  order: 1;
-}
-.list__item[data-id="package"] {
-  order: 2;
-}
-.list__item[data-id="accounting"] {
-  order: 3;
-}
-.list__item[data-id="terminal"] {
-  order: 4;
-}
 // tlačítko pro smazání položky
 .item__remove {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
   background: transparent;
-  border: 1px solid #b8b8b8;
+  color: c.$colorFontHover;
+  border: 1px solid oklch(97.448% 0.03578 170.446);
   border-radius: 4px;
-  padding: 3px 6px;
-  margin-right: 5px;
   cursor: pointer;
-  font-size: 4px;
   opacity: 1;
   pointer-events: none;
   transition: 0.2s;
 }
 
 .list__item.open .item__remove {
-  opacity: 1;
   pointer-events: auto;
   visibility: visible;
 }
@@ -224,16 +210,15 @@
   display: none;
 }
 
-@media (min-width: b.$tabletBreakPoint) {
+@media (min-width: 660px) {
   .calc {
     &__contain {
-      grid-template-columns: 240px 130px 1fr;
-      align-items: start;
+      grid-template-columns: 280px auto;
       gap: 15px;
     }
 
-    &__summary {
-      margin-top: 0;
+    .wrapper__resultSumm {
+      grid-template-columns: auto auto;
 
       .list__item {
         order: 0;
@@ -243,20 +228,36 @@
           display: none;
         }
       }
+
+      .calc__preview,
+      .ul__summary {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .calc__preview > li,
+      .ul__summary > li {
+        min-height: 42.8px; // stejná výška řádku
+        display: flex;
+        align-items: center;
+      }
     }
-  }
 
-  .calc__preview {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 34px;
-
-    font-weight: 600;
-    margin: 9px 0 0 25px;
+    .calc__preview {
+      display: inline-flex;
+      flex-direction: column;
+    }
   }
 
   .item__type.active {
     font-weight: 700;
     color: c.$color-green-dark;
+  }
+}
+
+@media (min-width: b.$desktopBreakPoint) {
+  .calc .wrapper__resultSumm {
+    grid-template-columns: 0.4fr auto;
   }
 }
