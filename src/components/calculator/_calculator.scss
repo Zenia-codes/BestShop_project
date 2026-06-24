@@ -119,6 +119,10 @@
   .wrapper__resultSumm {
     display: grid;
 
+    .calc__preview {
+      display: none;
+    }
+
     .ul__summary {
       display: grid;
       gap: 10px;
@@ -182,39 +186,50 @@
 }
 
 // tlačítko pro smazání položky
-.item__remove {
-  background: transparent;
-  color: c.$colorFontHover;
-  border: 1px solid oklch(97.448% 0.03578 170.446);
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 1;
-  pointer-events: none;
-  transition: 0.2s;
-}
+.wrapper_priceRemove {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-.list__item.open .item__remove {
-  pointer-events: auto;
-  visibility: visible;
-}
+  .item__remove {
+    display: inline-flex;
+    align-items: center;
 
-.consent__text {
-  font-size: 16px;
-}
+    font-family: f.$numberFont;
+    width: 25px;
+    height: 25px;
+    font-size: 19px;
+    background: oklch(93.212% 0.10228 166.862);
+    color: c.$colorFontHover;
+    border: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
 
-.calc__preview {
-  display: none;
-}
+  .list__item.open .item__remove {
+    pointer-events: auto;
+    visibility: visible;
+  }
 
-.item__calc {
-  display: none;
+  .consent__text {
+    font-size: 16px;
+  }
+
+  .calc__preview {
+    display: none;
+  }
+
+  .item__calc {
+    display: none;
+  }
 }
 
 @media (min-width: 660px) {
   .calc {
     &__contain {
       grid-template-columns: 280px auto;
-      gap: 15px;
+      gap: 45px;
     }
 
     .wrapper__resultSumm {

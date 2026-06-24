@@ -175,7 +175,7 @@ Calculator.prototype.bindPackage = function () {
 Calculator.prototype.bindRemoveButtons = function () {
   Object.keys(this.summary.items).forEach((key) => {
     const item = this.summary.items[key];
-    const btn = item.querySelector(".item__remove");
+    const btn = item.querySelector(".wrapper_priceRemove");
 
     if (!btn) return;
 
